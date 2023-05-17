@@ -4,12 +4,17 @@ import login from '../../../public/login.jpg'
 import { AiOutlineLogin, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../provider/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/config';
 
 const Login = () => {
 
       const {userLogin} = useContext(AuthContext)
       const [error, setError] = useState('')
       const navigate = useNavigate();
+      const googleProvider = new GoogleAuthProvider();
+      const from = location.state?.from?.pathname || '/'
+      const auth = getAuth(app);
 
       const handleLogin=event=>{
             event.preventDefault();
@@ -23,6 +28,7 @@ const Login = () => {
                   const loggedUser= result.user;
                   console.log(loggedUser);
                   navigate('/')
+                  navigate(from, {replace:true})
       
             })
             .catch(error=>{
@@ -31,6 +37,22 @@ const Login = () => {
       
       
       
+         }
+
+
+         const handleGoogleSignIn = ()=>{
+            signInWithPopup(auth, googleProvider)
+            .then(result=>{
+                  const user= result.user;
+                  console.log(user);
+                  navigate('/')
+                  navigate(from, {replace:true})
+            })
+            .then(error=>{
+                  setError(error.message)
+            })
+
+
          }
       
 
@@ -95,7 +117,7 @@ const Login = () => {
                 </p>
                 <div className="divider">OR</div>
                <div className="flex items-center justify-center">
-               <button className="btn  btn-circle btn-outline"><FcGoogle className="text-xl"></FcGoogle></button>
+               <button onClick={handleGoogleSignIn} className="btn  btn-circle btn-outline"><FcGoogle className="text-xl"></FcGoogle></button>
                </div>
               </form>
             </div>

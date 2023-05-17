@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MdOutlineToys } from "react-icons/md";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+
+      const {user, logOut} = useContext(AuthContext);
 
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNav = () => {
       setNavOpen(!navOpen);
     };
+
+    const handleLogOut = ()=>{
+      logOut();
+    }
   
 
 
@@ -22,8 +29,20 @@ const Navbar = () => {
         <NavLink to='/blog'>Blog</NavLink>
       </li>
       <li>
+        <NavLink to='/blog'>AllToys</NavLink>
+      </li>
+      <li>
+        <NavLink to='/blog'>AddaToy</NavLink>
+      </li>
+     {
+      user? <> 
+     <li> <NavLink onClick={handleLogOut} to='/login'>Logout</NavLink></li>
+     <li> <NavLink to='/login'>Mytoys</NavLink></li>
+
+     <img className="w-[40px] rounded-full" src={user.photoURL} alt="" title={user?.displayName} /> </>:  <li>
         <NavLink to='/login'>Login</NavLink>
       </li>
+     }
     </>
   );
 
