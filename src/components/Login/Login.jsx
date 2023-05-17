@@ -1,10 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../../public/login.jpg'
 import { AiOutlineLogin, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
+
+      const {userLogin} = useContext(AuthContext)
+      const [error, setError] = useState('')
+      const navigate = useNavigate();
+
+      const handleLogin=event=>{
+            event.preventDefault();
+            const form = event.target;
+            const email = form.email.value;
+            const password = form.password.value;
+            console.log(email, password);
+      
+            userLogin(email, password)
+            .then(result=>{
+                  const loggedUser= result.user;
+                  console.log(loggedUser);
+                  navigate('/')
+      
+            })
+            .catch(error=>{
+                  setError(error.message)
+            })
+      
+      
+      
+         }
+      
+
+
+
+
       return (
           <>
           
@@ -20,7 +52,7 @@ const Login = () => {
         <div className="hero min-h-screen md:max-w-[550px]  mx-auto p-20">
           <div className="hero-content flex-col ">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form className="card-body my-container">
+              <form onSubmit={handleLogin} className="card-body my-container">
                
                
                 <div className="form-control">
@@ -48,7 +80,7 @@ const Login = () => {
                   />
                   <AiFillEyeInvisible className="absolute ml-72 top-14"></AiFillEyeInvisible>
                 </div>
-                {/* <p className='text-yellow-600'>{error}</p> */}
+                <p className='text-yellow-600'>{error}</p>
                 <div className="form-control mt-6">
                   <button className="btn btn-success tracking-widest text-white">
                     Login now{" "}
