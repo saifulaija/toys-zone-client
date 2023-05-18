@@ -3,6 +3,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { FiDelete } from "react-icons/fi";
 
 import { GrUpdate } from "react-icons/gr";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -20,28 +22,37 @@ const MyToys = () => {
   }, [user]);
   console.log(toys);
 
-
-
-
- const handleDelete = (id)=>{
-    const proceed = confirm('Are you sure to delete');
-
-    if(proceed){
-        fetch(`http://localhost:5000/setToys/${id}`,{
-            method:'DELETE'
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/setToys/${id}`, {
+          method: "DELETE",
         })
-        .then(res=>res.json())
-        .then(data=>{
+          .then((res) => res.json())
+
+          .then((data) => {
             console.log(data);
-            if(data.deletedCount > 0){
-                alert('delete successful')
-                const remaining = toys.filter(toy=> toy._id !== id);
-                setToys(remaining)
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
+            
+            
+            //   setToys(remaining);
             }
-        })
-    }
- }
+            const remaining = toys.filter(toy=> toy._id !== id);
+            setToys(remaining);
 
+          });
+      }
+    });
+  };
 
   return (
     <div className="">
@@ -78,13 +89,18 @@ const MyToys = () => {
                 <td>{toy.price}</td>
                 <td>{toy.rating}</td>
                 <td>
-                  <button className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
-                    Update{" "}
-                    <GrUpdate className="inline-block text-yellow-700 ml-2"></GrUpdate>
-                  </button>
+                  <Link to={`/update/${toy._id}`}>
+                    <button className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
+                      Update{" "}
+                      <GrUpdate className="inline-block text-yellow-700 ml-2"></GrUpdate>
+                    </button>
+                  </Link>
                 </td>
                 <td>
-                  <button onClick={()=>handleDelete(toy._id)} className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
+                  <button
+                    onClick={() => handleDelete(toy._id)}
+                    className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase "
+                  >
                     Delete <FiDelete className="inline-block "></FiDelete>
                   </button>
                 </td>

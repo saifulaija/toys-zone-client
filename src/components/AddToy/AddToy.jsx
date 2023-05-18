@@ -8,7 +8,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { VscFileSubmodule} from "react-icons/vsc";
-import Swal from "sweetalert2";
+
+import Swal from 'sweetalert2'
 
 
 const AddToy = () => {
@@ -44,12 +45,15 @@ const AddToy = () => {
       .then(res=>res.json())
       .then(result=>{
             console.log(result);
-            if(result.modifiedCount){
-                  Swal.fire(
-                        'Good job!',
-                        'You clicked the button!',
-                        'success'
-                      )
+            if(result.insertedId){
+
+                  Swal.fire({
+                        title: 'success',
+                        text: 'toy added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                 
 
             }
          
