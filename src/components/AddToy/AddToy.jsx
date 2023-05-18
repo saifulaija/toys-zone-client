@@ -8,7 +8,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { VscFileSubmodule} from "react-icons/vsc";
-VscFileSubmodule
+import Swal from "sweetalert2";
+
 
 const AddToy = () => {
 
@@ -32,6 +33,27 @@ const AddToy = () => {
   const onSubmit = data =>{
      
       console.log(data);
+      fetch('http://localhost:5000/setToys',{
+            method:'POST',
+            headers:{
+                  'content-type':'application/json'
+                  
+            },
+            body:JSON.stringify(data)
+      })
+      .then(res=>res.json())
+      .then(result=>{
+            console.log(result);
+            if(result.modifiedCount){
+                  Swal.fire(
+                        'Good job!',
+                        'You clicked the button!',
+                        'success'
+                      )
+
+            }
+         
+      })
   }
 
 
@@ -52,14 +74,14 @@ const AddToy = () => {
           {errors.exampleRequired && <span>This field is required</span>}
           <input
             className="text-input outline-none border-2"
-            {...register("seller name")}
+            {...register("name")}
             placeholder="seller name"
             value={user?.displayName}
           />
 
           <input
             className="text-input"
-            {...register("seller email", { required: true })}
+            {...register("email", { required: true })}
             placeholder="seller email"
             value={user?.email}
           />

@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             {" "}
-            <NavLink to="/login">Mytoys</NavLink>
+            <NavLink to="/myToys">Mytoys</NavLink>
           </li>
           <img
             className="w-[40px] rounded-full"

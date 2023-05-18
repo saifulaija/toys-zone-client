@@ -5,6 +5,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import AddToy from "../components/AddToy/AddToy";
 import PrivateRoute from "../provider/PrivateRoute";
+import MyToys from "../components/MyToys/MyToys";
 
   export const router = createBrowserRouter([
       {
@@ -26,6 +27,10 @@ import PrivateRoute from "../provider/PrivateRoute";
            {
             path:'addToy',
             element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+           },
+           {
+            path:'myToys',
+            element:<MyToys></MyToys>
            }
         ]
 
