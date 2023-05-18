@@ -11,6 +11,12 @@
             @apply font-bold text-[20px] uppercase text-gray-600 font-mono
       }
       .heading{
-            @apply text-center inline-block p-4 font-serif font-bold underline-offset-2 text-2xl md:text-4xl text-[#005670] uppercase tracking-widest shadow-2xl 
+            @apply text-center text-yellow-800 font-bold text-2xl md:text-4xl uppercase tracking-widest  underline underline-offset-4 font-serif
+      
+      }
+
+      .text-input{
+            @apply p-4 rounded-lg outline-none border-2 border-green-400 bg-slate-100
+
       }
 }
