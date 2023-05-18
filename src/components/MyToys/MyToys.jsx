@@ -20,6 +20,29 @@ const MyToys = () => {
   }, [user]);
   console.log(toys);
 
+
+
+
+ const handleDelete = (id)=>{
+    const proceed = confirm('Are you sure to delete');
+
+    if(proceed){
+        fetch(`http://localhost:5000/setToys/${id}`,{
+            method:'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.deletedCount > 0){
+                alert('delete successful')
+                const remaining = toys.filter(toy=> toy._id !== id);
+                setToys(remaining)
+            }
+        })
+    }
+ }
+
+
   return (
     <div className="">
       <h1 className="heading my-20">Your All Toys</h1>
@@ -61,7 +84,7 @@ const MyToys = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
+                  <button onClick={()=>handleDelete(toy._id)} className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
                     Delete <FiDelete className="inline-block "></FiDelete>
                   </button>
                 </td>
