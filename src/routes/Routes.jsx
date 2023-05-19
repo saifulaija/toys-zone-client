@@ -8,6 +8,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import MyToys from "../components/MyToys/MyToys";
 import Update from "../components/Update/Update";
 import AllToys from "../components/AllToys/AllToys";
+import ViewDetails from "../components/ViewDetails/ViewDetails";
 
   export const router = createBrowserRouter([
       {
@@ -42,6 +43,13 @@ import AllToys from "../components/AllToys/AllToys";
            {
             path:'allToys',
             element:<AllToys></AllToys>
+           },
+           {
+            path:'viewDetails/:id',
+            element:<PrivateRoute>
+                <ViewDetails></ViewDetails>
+            </PrivateRoute>,
+            loader:({params})=> fetch(`http://localhost:5000/detailsId/${params.id}`)
            }
         ]
 

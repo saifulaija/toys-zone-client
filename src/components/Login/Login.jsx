@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../../public/login.jpg'
 import { AiOutlineLogin, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
@@ -13,6 +13,7 @@ const Login = () => {
       const [error, setError] = useState('')
       const navigate = useNavigate();
       const googleProvider = new GoogleAuthProvider();
+       const location = useLocation();
       const from = location.state?.from?.pathname || '/'
       const auth = getAuth(app);
 
@@ -27,7 +28,7 @@ const Login = () => {
             .then(result=>{
                   const loggedUser= result.user;
                   console.log(loggedUser);
-                  navigate('/')
+                  // navigate('/')
                   navigate(from, {replace:true})
       
             })

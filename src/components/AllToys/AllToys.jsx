@@ -31,7 +31,7 @@ const AllToys = () => {
 
   return (
     <div className=" my-container">
-      <h1 className="heading"> All Toys </h1>
+      <h1 className="heading my-10"> All Toys </h1>
      <div className="flex items-center justify-center">
      <div className="form-control my-10 ">
         <div className="input-group">
@@ -62,9 +62,8 @@ const AllToys = () => {
       </div>
      </div>
 
-
      <div className="overflow-x-auto my_container">
-        <table className="table w-full">
+        <table className="table w-full ">
           {/* head */}
           <thead>
             <tr>
@@ -72,11 +71,12 @@ const AllToys = () => {
 
               <th>Seller Name</th>
               <th>Toy Name</th>
-              <th>Sub category</th>
-              <th>Price</th>
+              <th> Sub Category</th>
               
-              <th> Quantity</th>
+              <th>Price</th>
+              <th>Quantity</th>
              
+         
               <th>Action</th>
             </tr>
           </thead>
@@ -84,22 +84,25 @@ const AllToys = () => {
             {toys.map((toy, index) => (
               <tr>
                 <th>{index + 1}</th>
-              
-                <td>{user?.displayName}</td>
+                <td>
+                 {user?.displayName}
+                </td>
                 <td>{toy.toyName}</td>
                 <td>{toy.Category}</td>
+                
+                
                 <td>{toy.price}</td>
                 <td>{toy.quantity}</td>
                
                 <td>
-                  <Link to={`/update/${toy._id}`}>
-                    <button className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase hover:bg-[#72cac0] transition duration-200 ">
-                      Details{" "}
+                  <Link to={`/viewDetails/${toy._id}`}>
+                    <button className="primary-button">
+                      details{" "}
                       <BiStreetView className="inline-block text-yellow-700 ml-2"></BiStreetView>
                     </button>
                   </Link>
                 </td>
-                
+               
               </tr>
             ))}
           </tbody>
@@ -111,3 +114,4 @@ const AllToys = () => {
 };
 
 export default AllToys;
+
