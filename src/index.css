@@ -31,4 +31,8 @@
       .image{
             @apply  w-full md:w-[400px] h-[300px] shadow-2xl rounded-lg hover:scale-125 duration-300
       }
+
+      .secondary-button{
+            @apply px-8 text-teal-900 outline-none border-2 border-teal-400 hover:bg-[#669bbc] duration-300 uppercase tracking-widest font-bold   rounded-full py-2
+      }
 }

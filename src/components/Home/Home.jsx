@@ -3,14 +3,17 @@ import Banner from '../Banner/Banner';
 import Shop from '../Shop/Shop';
 import Gallery from '../Gallery/Gallery';
 import About from '../About/About';
+import Service from '../Service/Service';
 
 const Home = () => {
       return (
             <div>
                  <Banner></Banner>
                  <Gallery></Gallery>
-                 <About></About>
+                
                  <Shop></Shop>
+                 <About></About>
+                 <Service></Service>
             </div>
       );
 };
