@@ -2,11 +2,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../firebase/config';
+import { useNavigate } from 'react-router-dom';
  export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
-
+     
     
   
       const [user, setUser] = useState(null);
@@ -29,6 +30,7 @@ const AuthProvider = ({children}) => {
        const logOut = ()=>{
             setLoading(true);
             signOut(auth)
+           
        }
 
 

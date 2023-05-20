@@ -62,8 +62,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full  bg-[#F0B6Cb]">
-      <div className=" my_container flex justify-between items-center p-8  ">
+    <div className="w-full  bg-[#679B9B]">
+      <div className=" my_container flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <MdOutlineToys className="text-[#F0B6CB] text-[40px] "></MdOutlineToys>
           <h1 className="text-yellow-700 font-serif  font-bold uppercase tracking-wider md:text-4xl">

@@ -33,6 +33,34 @@ const AllToys = () => {
             setToys(data);
       })
   }
+
+  const handleAscending=()=>{
+   
+      
+    fetch('http://localhost:5000/sorts')
+    .then(res=>res.json())
+    .then(data=>{
+     setToys(data);
+    }
+      )
+    
+
+  
+  }
+
+
+  const handleDecending =()=>{
+
+
+       
+    fetch('http://localhost:5000/sortsD')
+    .then(res=>res.json())
+    .then(data=>{
+     setToys(data);
+    }
+      )
+  }
+  
   
 
 
@@ -42,6 +70,12 @@ const AllToys = () => {
       <h1 className="heading my-10"> All Toys </h1>
       
      <div className="flex items-center justify-center">
+       <div>
+        <h1 className="text-xl font-bold">Sort by Price</h1>
+        <button onClick={handleAscending} className="primary-button bg-yellow-300">Ascending</button>
+        <button onClick={handleDecending}  className="primary-button ml-4 bg-yellow-300">Ascending</button>
+
+       </div>
      <div className="form-control my-10 ">
         <div className="input-group">
           <input

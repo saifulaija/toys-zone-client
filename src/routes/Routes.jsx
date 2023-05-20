@@ -11,6 +11,7 @@ import AllToys from "../components/AllToys/AllToys";
 import ViewDetails from "../components/ViewDetails/ViewDetails";
 import Blog from "../components/Blog/Blog";
 import Error from "../components/Error/Error";
+import HomeDetails from "../components/HomeDetails/HomeDetails";
 
   export const router = createBrowserRouter([
       {
@@ -57,6 +58,13 @@ import Error from "../components/Error/Error";
            {
             path:'blog',
             element:<Blog></Blog>
+           },
+           {
+            path:'homeDetails/:id',
+            element:<PrivateRoute>
+                <HomeDetails></HomeDetails>
+            </PrivateRoute>,
+             loader:({params})=> fetch(`http://localhost:5000/detailsId/${params.id}`)
            }
 
         ]

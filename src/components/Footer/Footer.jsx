@@ -9,7 +9,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div className="w-ful image-banner p-10">
-      <footer className="my-container mt-12">
+      <footer className="my-container  mt-12">
             <div className=" text-white space-y-6  md:flex items-center justify-between ">
                 <div>
                 <div className="flex">

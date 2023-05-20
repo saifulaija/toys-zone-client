@@ -38,7 +38,7 @@ const Update = () => {
   };
 
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-black p-20">
       <h1 className="heading py-10 "> You Can Update Toy</h1>
       <div className="md:flex justify-between gap-12 items-center p-8 my_container ">
         <form
@@ -67,11 +67,11 @@ const Update = () => {
             placeholder="update description"
           />
           <input
-            className="submit-btn bg-green-600 px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
-            value="Post Job"
+            className="submit-btn bg-green-600 px-4 inline-block tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
+            value="Update Toy"
             type="submit"
           />{" "}
-          <VscFileSubmodule className="inline-block"></VscFileSubmodule>
+         
         </form>
 
         {/* <div className="md:w-1/2">
