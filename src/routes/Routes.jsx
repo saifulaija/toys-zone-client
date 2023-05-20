@@ -10,11 +10,13 @@ import Update from "../components/Update/Update";
 import AllToys from "../components/AllToys/AllToys";
 import ViewDetails from "../components/ViewDetails/ViewDetails";
 import Blog from "../components/Blog/Blog";
+import Error from "../components/Error/Error";
 
   export const router = createBrowserRouter([
       {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:'/',
