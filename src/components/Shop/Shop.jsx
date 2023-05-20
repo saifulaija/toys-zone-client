@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShopCard from "../ShopCard/ShopCard";
+import { useNavigate, useNavigation } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 const Shop = () => {
   const [activeTab, setActiveTab] = useState("asd");
@@ -10,7 +12,14 @@ const Shop = () => {
     setActiveTab(tabName);
   };
 
+   const navigation = useNavigation();
+   if(navigation.state === 'loading'){
+      return <Loader></Loader>
+   }
+
   useEffect(() => {
+
+
     fetch(`http://localhost:5000/filter/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {

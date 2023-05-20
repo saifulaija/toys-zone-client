@@ -4,6 +4,7 @@ import Shop from '../Shop/Shop';
 import Gallery from '../Gallery/Gallery';
 import About from '../About/About';
 import Service from '../Service/Service';
+import Loader from '../Loader/Loader';
 
 const Home = () => {
       return (

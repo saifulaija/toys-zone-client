@@ -3,11 +3,18 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { FiDelete } from "react-icons/fi";
 
 import { GrUpdate } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
+
+   
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+     return <Loader></Loader>
+  }
+
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   console.log(user?.email);

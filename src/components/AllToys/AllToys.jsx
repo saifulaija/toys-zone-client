@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import { BiStreetView } from "react-icons/bi";
 import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+
+  
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+     return <Loader></Loader>
+  }
 
   const [searchText, setSearchText] = useState('');
   const {user} = useContext(AuthContext);
