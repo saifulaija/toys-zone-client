@@ -11,7 +11,7 @@ const Service = () => {
                   <h1 className='heading my-6'>our Service</h1>
                   <p className='text-center'>Toy Zone  during, and after a purchase or interaction. It involves addressing customer  inquiries, resolving issues, providing information, <br /> and ensuring customer satisfaction</p>
                   <div className='grid gap-8 my-6 md:grid-cols-3 '>
-                        <div className='shadow-xl p-6 space-y-6 rounded-md'>
+                        <div className='shadow-xl p-6 space-y-6 rounded-md '  >
                               <div className='flex items-center justify-center'>
                               <FaLaptopMedical className='text-7xl text-center animate-bounce'></FaLaptopMedical>
                               </div>

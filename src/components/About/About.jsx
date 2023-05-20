@@ -9,11 +9,11 @@ const About = () => {
                   <h1 className='heading my-12'>About Us</h1>
 
                   <div className=' my_container md:flex justify-between items-center'>
-                        <div className='md:w-1/2 relative'>
+                        <div className='md:w-1/2 relative' data-aos="zoom-out-up" data-aos-time="2000">
                               <img className='rounded-lg' src={ceo} alt="" />
                               <img className='absolute ml-36 rounded-lg -mt-32 shadow-2xl' src={subceo} alt="" />
                         </div>
-                        <div className='md:w-1/2 space-y-8'>
+                        <div className='md:w-1/2 space-y-8' data-aos="zoom-out-up" data-aos-time="2000">
                               <h1 className='text-3xl font-bold uppercase tracking-widest underline-offset-2'>Our Mission</h1>
                               <p>My mission as an AI language model is to assist and provide helpful and accurate information to users like you. I strive to answer questions, engage in conversation, and assist with various topics to the best of my abilities. If you have any specific questions or need assistance with a particular subject, feel free to ask!</p>
                               <button className='primary-button bg-yellow-700 text-white'>Explore More <CiViewColumn className='inline-block'></CiViewColumn> </button>
