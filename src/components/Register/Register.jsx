@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../firebase/config";
+import useTitle from "../../hooks/useTitle";
 
 const auth = getAuth(app);
 
@@ -15,6 +16,8 @@ const Register = () => {
       const [error, setError] = useState('');
       const {createUser,logOut} = useContext(AuthContext);
       const navigate = useNavigate()
+
+      useTitle('Register')
 
       const handleRegister = event =>{
         

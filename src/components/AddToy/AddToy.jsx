@@ -10,12 +10,14 @@ import CreatableSelect from "react-select/creatable";
 import { VscFileSubmodule} from "react-icons/vsc";
 
 import Swal from 'sweetalert2'
+import useTitle from "../../hooks/useTitle";
 
 
 const AddToy = () => {
 
   const [addToy, setAddToy] = useState(null);
   const {user} = useContext(AuthContext);
+  useTitle('AddToys')
 
   
   const options = [

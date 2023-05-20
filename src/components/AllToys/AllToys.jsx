@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { BiStreetView } from "react-icons/bi";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
 
   const [searchText, setSearchText] = useState('');
   const {user} = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  useTitle('allToys')
 
   useEffect(()=>{
       fetch('http://localhost:5000/allToys')

@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/config';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
@@ -16,6 +17,7 @@ const Login = () => {
        const location = useLocation();
       const from = location.state?.from?.pathname || '/'
       const auth = getAuth(app);
+      useTitle('Login')
 
       const handleLogin=event=>{
             event.preventDefault();
