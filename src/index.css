@@ -28,4 +28,7 @@
       .blog{
             @apply text-3xl font-bold underline underline-offset-4
       }
+      .image{
+            @apply  w-full md:w-[400px] h-[300px] shadow-2xl rounded-lg hover:scale-125 duration-300
+      }
 }
