@@ -25,4 +25,7 @@
       .primary-color{
             @apply bg-[#ffddd2]
       }
+      .blog{
+            @apply text-3xl font-bold underline underline-offset-4
+      }
 }

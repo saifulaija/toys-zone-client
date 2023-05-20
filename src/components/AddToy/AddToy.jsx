@@ -97,9 +97,9 @@ const AddToy = () => {
           />
          
           <select className="text-input" {...register("Category")}>
-            <option value="Sports Car">Sports Car</option>
-            <option value="Mini Car">Mini Police Car</option>
-            <option value="Regular Car">Regular Car</option>
+            <option value="Sports">Sports</option>
+            <option value="Police">Police</option>
+            <option value="Regular">Regular</option>
           </select>
           <select className="text-input" {...register("subCategory")}>
             <option value="Big car">Big Car</option>

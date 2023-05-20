@@ -32,6 +32,7 @@ const AllToys = () => {
   return (
     <div className=" my-container">
       <h1 className="heading my-10"> All Toys </h1>
+      
      <div className="flex items-center justify-center">
      <div className="form-control my-10 ">
         <div className="input-group">
