@@ -6,15 +6,21 @@ import About from '../About/About';
 import Service from '../Service/Service';
 import Loader from '../Loader/Loader';
 
+
+
+
 const Home = () => {
       return (
             <div>
                  <Banner></Banner>
                  <Gallery></Gallery>
                 
+                 <Service></Service>
+                 
+                
                  <Shop></Shop>
                  <About></About>
-                 <Service></Service>
+                
             </div>
       );
 };

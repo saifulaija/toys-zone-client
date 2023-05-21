@@ -3,6 +3,10 @@ import { BsFillArrowRightCircleFill} from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaLocationArrow } from "react-icons/fa";
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
+FaLocationArrow
 
 const ShopCard = ({ toy }) => {
       const navigate = useNavigate()
@@ -46,28 +50,29 @@ const ShopCard = ({ toy }) => {
 
 
   return (
-    <div>
-      <div className="card card-side bg-[#637373] shadow-2xl p-4 text-white border-dashed hover:scale-105 duration-200 ">
-        <figure>
-          <img className="shadow-2xl rounded-lg" src={toy.image} alt="Movie" />
-        </figure>
-        <div className="card-body ">
-          <h2 className="card-title">{toy.Category} Car</h2>
-          <p>price: {toy.price}</p>
-          <p>rating: {toy.rating}</p>
-           <p>details: {toy.description.slice(0,80)}...</p>
+    <div className="border shadow-md border-dashed rounded-lg border-yellow-400 outline-none p-8 bg-[#F1E7C7] hover:bg-green-300 duration-200">
 
-         
-          <div className="divider divide-red-500">Toys Zone</div>
-          <div>
-          <Link to={`/homeDetails/${toy._id}`}>
-          <button onClick={handleTo}  className="primary-button bg-[#FFEADB]">details <BsFillArrowRightCircleFill className="inline-block"></BsFillArrowRightCircleFill> </button>
-          </Link>
-          </div>
-        </div>
-      
-
+      <div className=" p-4 flex items-center justify-center ">
+        <img className="w-[300px] h-[200px]  rounded-lg shadow-xl" src={toy?.image} alt="" />
       </div>
+      <div className="divider new">Toy Zone</div>
+
+      <div className=" text-gray-600">
+        <p>name: {toy?.toyName}</p>
+        <p>price: ${toy?.price}</p>
+        <div className="flex justify-between items-center mt-8 bottom-0">
+
+           <div>
+           <Rating style={{maxWidth:80}} value={toy?.rating} readOnly />
+           </div>
+          <button className="primary-button bg-[#F8D96D] shadow-2xl"> View details <FaLocationArrow className="inline-block"></FaLocationArrow> </button>
+        </div>
+        
+      </div>
+       
+     
+
+
     </div>
   );
 };

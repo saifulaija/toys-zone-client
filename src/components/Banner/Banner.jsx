@@ -8,14 +8,14 @@ import banner from "../../../public/banner.jpg";
 const Banner = () => {
   return (
     <div className="w-full banner">
-      <div className="my_container gap-6  p-40 md:flex justify-between items-center ">
+      <div className="my_container space-y-6 gap-8 p-8 md:p-40 md:flex justify-between items-center ">
         <div
-          className="md:w-1/2 leading-6 space-y-8 "
+          className="w-full md:w-1/2 md:leading-6 space-y-8 "
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
-          <h1 className="text-2xl md:text-4xl font-bold uppercase text-white tracking-widest">
+          <h1 className="text-2xl font-sans md:text-4xl font-bold uppercase text-white tracking-widest">
             well come to our shop
           </h1>
           <p className="mb-5 text-white">
@@ -30,7 +30,7 @@ const Banner = () => {
           </button>
         </div>
         <div
-          className="md:w-1/2"
+          className=" w-full md:w-1/2"
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"

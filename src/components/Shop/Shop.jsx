@@ -20,7 +20,7 @@ const Shop = () => {
   useEffect(() => {
 
 
-    fetch(`http://localhost:5000/filter/${activeTab}`)
+    fetch(`https://assignment-11-server-ivory.vercel.app/filter/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -28,7 +28,7 @@ const Shop = () => {
   }, [activeTab]);
 
   return (
-    <div className="w-full bg-[#679B9B]">
+    <div className="w-full">
       <div className="my_container p-14">
         <h1 className="heading">Shop by category</h1>
 
@@ -59,7 +59,7 @@ const Shop = () => {
             category 3
           </button>
         </div>
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-3 gap-5">
             {
                toys.map(toy=><ShopCard key={toy._id} toy={toy}></ShopCard>)   
             }

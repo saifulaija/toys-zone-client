@@ -5,12 +5,12 @@ import { CiViewColumn } from "react-icons/ci";
 
 const About = () => {
   return (
-    <div className="w-full p-32 ">
+    <div className="w-full p-10 md:p-32 ">
       <h1 className="heading my-12">About Us</h1>
 
       <div className=" my_container md:flex justify-between items-center">
         <div
-          className="md:w-1/2 relative"
+          className="md:w-1/2 relative "
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
@@ -22,13 +22,17 @@ const About = () => {
             alt=""
           />
         </div>
+
+        <div className="divider lg:divider-horizontal new">toy</div> 
         <div
           className="md:w-1/2 space-y-8"
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
+          
+          
         >
-          <h1 className="text-3xl font-bold uppercase tracking-widest underline-offset-2">
+          <h1 className="text-3xl mt-28 font-bold uppercase tracking-widest underline-offset-2">
             Our Mission
           </h1>
           <p>
@@ -38,7 +42,7 @@ const About = () => {
             the best of my abilities. If you have any specific questions or need
             assistance with a particular subject, feel free to ask!
           </p>
-          <button className="primary-button bg-yellow-700 text-white">
+          <button className="primary-button bg-[#5A4C42] text-white">
             Explore More <CiViewColumn className="inline-block"></CiViewColumn>{" "}
           </button>
         </div>

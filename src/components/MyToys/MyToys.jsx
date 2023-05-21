@@ -20,9 +20,9 @@ const MyToys = () => {
   console.log(user?.email);
   useTitle('MyToys')
 
-  // const url = `http://localhost:5000/allToys?email=${user?.email}`;
+  // const url = `https://assignment-11-server-ivory.vercel.app/allToys?email=${user?.email}`;
 
-  const url = `http://localhost:5000/someToys?email=${user?.email}`;
+  const url = `https://assignment-11-server-ivory.vercel.app/someToys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -42,7 +42,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/setToys/${id}`, {
+        fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -63,9 +63,52 @@ const MyToys = () => {
     });
   };
 
+
+
+ 
+  const handleAscending=()=>{
+   
+      
+    fetch('https://assignment-11-server-ivory.vercel.app/sorts')
+    .then(res=>res.json())
+    .then(data=>{
+     setToys(data);
+    }
+      )
+    
+
+  
+  }
+
+
+  
+  const handleDecending =()=>{
+
+
+       
+    fetch('https://assignment-11-server-ivory.vercel.app/sortsD')
+    .then(res=>res.json())
+    .then(data=>{
+     setToys(data);
+    }
+      )
+  }
+
+
+
+
+
   return (
     <div className="">
       <h1 className="heading my-20">Your All Toys</h1>
+
+
+      <div className="flex justify-center items-center my-5">
+        <h1 className="text-xl font-bold">Sort by Price</h1>
+        <button onClick={handleAscending} className="primary-button bg-yellow-300">Ascending</button>
+        <button onClick={handleDecending}  className="primary-button ml-4 bg-yellow-300">Descending</button>
+
+       </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}

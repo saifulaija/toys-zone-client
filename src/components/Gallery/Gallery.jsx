@@ -12,9 +12,9 @@ import image9 from '../../../public/gallery9.jpg'
 
 const Gallery = () => {
       return (
-            <div className='w-full bg-black p-28 '>
-                  <h1 className='heading mb-10'>Gallery </h1>
-                  <div className='grid md:grid-cols-3 gap-4 my_container '>
+            <div className='w-full bg-black md:p-20 '>
+                  <h1 className=' heading  '>Gallery </h1>
+                  <div className='grid md:grid-cols-3 my-10  gap-4 my_container '>
                         <img className='image' src={image1} alt="" />
                         <img className='image'  src={image2} alt="" />
                         <img className='image'  src={image3} alt="" />
