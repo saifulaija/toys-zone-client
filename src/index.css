@@ -16,7 +16,7 @@
       }
 
       .text-input{
-            @apply p-4 rounded-lg outline-none border-2 border-green-400 bg-slate-100
+            @apply p-4 rounded-md outline-none border border-yellow-950 bg-slate-100
 
       }
       .primary-button{

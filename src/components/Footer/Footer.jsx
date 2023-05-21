@@ -32,7 +32,7 @@ const Footer = () => {
                 <p>Our Mission</p>
                 <p>Customer Care</p>
                </div>
-                <div className="flex gap-4">
+                <div className="flex text-yellow-700 gap-4">
                   <p><FaFacebook></FaFacebook></p>
                   <p><FaTwitter></FaTwitter></p>
                   <p><FaInstagram></FaInstagram></p>

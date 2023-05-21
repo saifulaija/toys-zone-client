@@ -70,12 +70,12 @@ const AddToy = () => {
 
 
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-[#ABA89E]">
       <h1 className="heading py-10 ">Now You Can Added Toy</h1>
       <div className="md:flex justify-between gap-12 items-center p-8 my_container ">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className=" flex w-1/2 flex-col p-5 bg-gray-300 space-y-4 mx-auto"
+          className=" flex w-1/2 flex-col p-5 bg-[#335882]  rounded-md space-y-4 mx-auto"
         >
           {errors.exampleRequired && <span>This field is required</span>}
           <input
@@ -141,8 +141,7 @@ const AddToy = () => {
             placeholder="description"
           />
           
-          <input className="submit-btn bg-green-600 px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md" value="Post Job" type="submit" /> <VscFileSubmodule className="inline-block"></VscFileSubmodule>
-          
+          <input className="submit-btn bg-green-600 px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md" value="Post Job" type="submit" /> 
         
         </form>
 
