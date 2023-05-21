@@ -62,7 +62,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full  bg-[#679B9B]">
+    <div className="w-full sticky top-0 z-10 bg-[#161D32]">
       <div className=" my_container flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <MdOutlineToys className="text-yellow-700 text-[40px] "></MdOutlineToys>
@@ -74,7 +74,7 @@ const Navbar = () => {
         <ul className=" hidden md:flex space-x-4">{navItem}</ul>
 
         <div onClick={handleNav} className="block md:hidden">
-          {navOpen ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          {navOpen ? <AiOutlineClose size={20} className="text-white" /> : <AiOutlineMenu size={20} className="text-white" />}
         </div>
 
         <ul
@@ -84,7 +84,7 @@ const Navbar = () => {
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >
-          <h1 className="text-white  font-bold uppercase tracking-wider text-xl">
+          <h1 className="text-yellow-700  font-bold uppercase tracking-wider text-xl">
             Toys Zone
           </h1>
           {navItem}

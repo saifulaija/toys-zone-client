@@ -1,12 +1,22 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { VscFileSubmodule} from "react-icons/vsc";
 import Swal from "sweetalert2";
+import Loader from "../Loader/Loader";
 
 const Update = () => {
+
+  
+
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+     return <Loader></Loader>
+  }
+
   const toy = useLoaderData();
   console.log(toy);
+  
 
   
 
@@ -19,7 +29,7 @@ const Update = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${toy._id} `, {
+    fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${toy?._id} `, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -38,7 +48,7 @@ const Update = () => {
   };
 
   return (
-    <div className="w-full bg-black p-20">
+    <div className="w-full bg-[#E5E4DF] p-20">
       <h1 className="heading py-10 "> You Can Update Toy</h1>
       <div className="md:flex justify-between gap-12 items-center p-8 my_container ">
         <form
@@ -67,7 +77,7 @@ const Update = () => {
             placeholder="update description"
           />
           <input
-            className="submit-btn bg-green-600 px-4 inline-block tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
+            className="submit-btn bg-green-600 px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
             value="Update Toy"
             type="submit"
           />{" "}

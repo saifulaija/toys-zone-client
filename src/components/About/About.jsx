@@ -5,19 +5,19 @@ import { CiViewColumn } from "react-icons/ci";
 
 const About = () => {
   return (
-    <div className="w-full p-10 md:p-32 ">
+    <div className="w-full bg-[#C7D4E4] p-10 md:p-32 ">
       <h1 className="heading my-12">About Us</h1>
 
-      <div className=" my_container md:flex justify-between items-center">
+      <div className=" my_container  md:p-16 text-gray-600 gap-16 md:flex justify-between items-center">
         <div
-          className="md:w-1/2 relative "
+          className=" w-full md:w-1/2 relative "
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
           <img className="rounded-lg" src={ceo} alt="" />
           <img
-            className="absolute ml-36 rounded-lg -mt-32 shadow-2xl"
+            className="absolute ml-12 md:ml-36 rounded-lg -mt-20 md:-mt-32 shadow-2xl"
             src={subceo}
             alt=""
           />
@@ -25,7 +25,7 @@ const About = () => {
 
         <div className="divider lg:divider-horizontal new">toy</div> 
         <div
-          className="md:w-1/2 space-y-8"
+          className="w-full md:w-1/2 space-y-8"
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"

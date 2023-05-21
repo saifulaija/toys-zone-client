@@ -6,6 +6,7 @@ import { GrUpdate } from "react-icons/gr";
 import { Link, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
+import Loader from "../Loader/Loader";
 
 const MyToys = () => {
 

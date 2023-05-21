@@ -10,6 +10,9 @@ import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
+
+
+      const [state, setState] = useState(false)
       const {userLogin} = useContext(AuthContext)
       const [error, setError] = useState('')
       const navigate = useNavigate();
@@ -57,6 +60,14 @@ const Login = () => {
 
 
          }
+
+
+         const handleHideShow = ()=>{
+          setState(prevState =>!prevState);
+         }
+
+
+
       
 
 
@@ -65,22 +76,23 @@ const Login = () => {
       return (
           <>
           
-          <div className="text-center">
-        <h1 className=" heading mt-24">Login now!!</h1>
+         <div className='w-full p-20'>
+         <div className="text-center">
+        <h1 className=" heading mb-6 ">Login now!!</h1>
       </div>
 
-      <div className="md:flex justify-between my-container items-center">
-        <div className='md:max-w-[550px]'>
+      <div className="md:flex my_container justify-between items-center">
+        <div className='max-w-[500px]'>
           <img src={login} alt="" />
         </div>
 
-        <div className="hero min-h-screen md:max-w-[550px]  mx-auto p-20">
+        <div className=" mx-auto">
           <div className="hero-content flex-col ">
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form onSubmit={handleLogin} className="card-body my-container">
+            <div className=" border-2 rounded-md bg-[#335882] p-10  ">
+              <form onSubmit={handleLogin} className=" my_container">
                
                
-                <div className="form-control">
+                <div className="form-control w-[400px]">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
@@ -97,25 +109,25 @@ const Login = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="password"
+                    type={state? 'text' : 'password'}
                     placeholder="password"
                     name="password"
                     required
                     className="input input-bordered"
                   />
-                  <AiFillEyeInvisible className="absolute ml-72 top-14"></AiFillEyeInvisible>
+                  <AiFillEyeInvisible  onClick={handleHideShow} className="absolute ml-80 top-14"></AiFillEyeInvisible>
                 </div>
                 <p className='text-yellow-600'>{error}</p>
                 <div className="form-control mt-6">
-                  <button className="btn btn-success tracking-widest text-white">
+                  <button className="btn btn-success tracking-widest mt-10 text-white">
                     Login now{" "}
-                    <AiOutlineLogin className="ml-8 text-xl font-bold"></AiOutlineLogin>
+                    <AiOutlineLogin  className="ml-8 text-xl font-bold"></AiOutlineLogin>
                   </button>
                 </div>
                 <p>
                   Are you new?
                   <Link to="/register">
-                    <button className="btn btn-link inline-block  ">Go to Register</button>
+                    <button className="btn btn-link inline-block text-yellow-700  ">Go to Register</button>
                   </Link>
                 </p>
                 <div className="divider">OR</div>
@@ -128,6 +140,7 @@ const Login = () => {
         </div>
       </div>
           
+         </div>
           </>
       );
 };

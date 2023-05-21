@@ -8,7 +8,7 @@ const HomeDetails = () => {
     toy;
   console.log(toy);
   return (
-    <div className="w-full bg-gray-50">
+    <div className="w-full bg-green-200">
       <div className="my_container flex justify-center items-center p-20">
         <div className="card w-[800px] bg-base-100 shadow-xl p-8">
           <figure>

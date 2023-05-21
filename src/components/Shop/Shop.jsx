@@ -4,18 +4,24 @@ import { useNavigate, useNavigation } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
 const Shop = () => {
+
+
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+     return <Loader></Loader>
+  }
+
   const [activeTab, setActiveTab] = useState("asd");
   const [toys, setToys] = useState([]);
+
+
 
   const handleTabClick = (tabName) => {
     console.log(tabName);
     setActiveTab(tabName);
   };
 
-   const navigation = useNavigation();
-   if(navigation.state === 'loading'){
-      return <Loader></Loader>
-   }
+  
 
   useEffect(() => {
 
@@ -28,7 +34,7 @@ const Shop = () => {
   }, [activeTab]);
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#E5E4DF]">
       <div className="my_container p-14">
         <h1 className="heading">Shop by category</h1>
 

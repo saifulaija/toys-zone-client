@@ -15,7 +15,8 @@ const Register = () => {
 
       const [error, setError] = useState('');
       const {createUser,logOut} = useContext(AuthContext);
-      const navigate = useNavigate()
+      const navigate = useNavigate();
+      const [state, setState] = useState()
 
       useTitle('Register')
 
@@ -51,6 +52,12 @@ const Register = () => {
             })
             console.log(error);
         }
+
+        
+        const handleHideShow = ()=>{
+          setState(prevState =>!prevState);
+         }
+
     
 
 
@@ -111,13 +118,13 @@ const Register = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="password"
+                    type= {state? 'text' : 'password'}
                     placeholder="password"
                     name="password"
                     required
                     className="input input-bordered"
                   />
-                  <AiFillEyeInvisible className="absolute ml-72 top-14"></AiFillEyeInvisible>
+                  <AiFillEyeInvisible onClick={handleHideShow} className="absolute ml-72 top-14"></AiFillEyeInvisible>
                 </div>
                 <p className='text-yellow-800'>{error}</p>
                 <div className="form-control mt-6">

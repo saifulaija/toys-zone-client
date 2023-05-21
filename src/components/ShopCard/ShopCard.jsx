@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { BsFillArrowRightCircleFill} from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaLocationArrow } from "react-icons/fa";
@@ -9,63 +9,47 @@ import '@smastrom/react-rating/style.css'
 FaLocationArrow
 
 const ShopCard = ({ toy }) => {
+
+  
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+     return <Loader></Loader>
+  }
       const navigate = useNavigate()
 
       const {user} = useContext(AuthContext);
+      
 
 
   const  handleTo = ()=>{
-     if(!user){
-
-
-
-      Swal.fire({
-            title: 'Are you sure?',
-            text: "You have to log in first to view details",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-
-           
-            if (result.isConfirmed) {
-                 
-              Swal.fire(
-                'Go',
-                'Go to Login',
-                'success'
-              )
-            }
-            navigate('/login')
-          })
-    
-
-
-
-     }
+      if(!user){
+        alert('You have to login first to view details')
+        navigate('/login')
+      }
   }
  
 
 
   return (
-    <div className="border shadow-md border-dashed rounded-lg border-yellow-400 outline-none p-8 bg-[#F1E7C7] hover:bg-green-300 duration-200">
+    <div className="border shadow-md border-dashed rounded-lg border-yellow-400 outline-none p-8 bg-[#161D32] ">
 
       <div className=" p-4 flex items-center justify-center ">
-        <img className="w-[300px] h-[200px]  rounded-lg shadow-xl" src={toy?.image} alt="" />
+        <img className="w-[300px] h-[200px] hover:scale-110 duration-100  rounded-lg shadow-xl" src={toy?.image} alt="" />
       </div>
-      <div className="divider new">Toy Zone</div>
+      <div className="h-1 bg-yellow-700 mt-2"></div>
 
       <div className=" text-gray-600">
         <p>name: {toy?.toyName}</p>
+        <p>category:{toy?.Category}</p>
         <p>price: ${toy?.price}</p>
         <div className="flex justify-between items-center mt-8 bottom-0">
 
            <div>
            <Rating style={{maxWidth:80}} value={toy?.rating} readOnly />
            </div>
-          <button className="primary-button bg-[#F8D96D] shadow-2xl"> View details <FaLocationArrow className="inline-block"></FaLocationArrow> </button>
+          <Link to={`/homeDetails/${toy?._id}`}>
+          <button onClick={handleTo} className="primary-button bg-[#5A4C42] shadow-2xl"> View details <FaLocationArrow className="inline-block"></FaLocationArrow> </button>
+          </Link>
         </div>
         
       </div>

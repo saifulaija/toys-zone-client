@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useNavigation } from "react-router-dom";
 import { BiStreetView } from "react-icons/bi";
 import useTitle from "../../hooks/useTitle";
+import Loader from "../Loader/Loader";
 
 const AllToys = () => {
 
@@ -98,7 +99,7 @@ const AllToys = () => {
               <tr>
                 <th>{index + 1}</th>
                 <td>
-                 {user?.displayName}
+                 {toy.name}
                 </td>
                 <td>{toy.toyName}</td>
                 <td>{toy.Category}</td>
@@ -108,8 +109,8 @@ const AllToys = () => {
                 <td>{toy.quantity}</td>
                
                 <td>
-                  <Link to={`/viewDetails/${toy._id}`}>
-                    <button className="primary-button">
+                  <Link to={`/viewDetails/${toy?._id}`}>
+                    <button className="primary-button bg-[#335882]">
                       details{" "}
                       <BiStreetView className="inline-block text-yellow-700 ml-2"></BiStreetView>
                     </button>

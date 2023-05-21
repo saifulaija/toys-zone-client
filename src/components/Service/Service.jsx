@@ -8,11 +8,12 @@ AiFillCustomerService
 const Service = () => {
 
       return (
-            <div className='w-full bg-gray-200 p-20 '>
+            <div className='w-full bg-[#E5E4DF] p-16 '>
                   <h1 className='heading my-6'>our Service</h1>
                   <p className='text-center'>Toy Zone  during, and after a purchase or interaction. It involves addressing customer  inquiries, resolving issues, providing information, <br /> and ensuring customer satisfaction</p>
-                  <div className='grid gap-8 my-6 md:grid-cols-3 '>
-                        <div className='shadow-xl border-dashed border border-cyan-300 p-6 space-y-6 rounded-md '  >
+                 
+                 <div className='grid gap-8 my-6 md:grid-cols-3 '>
+                        <div className='service'  >
                               <div className='flex items-center justify-center'>
                               <FaLaptopMedical className='text-7xl text-center animate-bounce'></FaLaptopMedical>
                               </div>
@@ -21,7 +22,7 @@ const Service = () => {
                               <button className=' secondary-button '>now more</button>
                           </div>
                           
-                          <div className='shadow-xl p-6 space-y-6 rounded-md'>
+                          <div className='service'>
                               <div className='flex items-center justify-center'>
                               <AiFillCustomerService className='text-7xl text-center animate-bounce'></AiFillCustomerService>
                               </div>
@@ -34,7 +35,7 @@ const Service = () => {
                           
                         
                         
-                        <div className='shadow-xl p-6 space-y-6 rounded-md'>
+                        <div className='service'>
                              <div className='flex items-center justify-center'>
                              <GrDeliver  className='text-7xl text-center animate-bounce'></GrDeliver>
                              </div>
@@ -43,6 +44,7 @@ const Service = () => {
                               <button className=' secondary-button '>now more</button>
                         </div>
                   </div>
+                 
 
                   
             </div>
