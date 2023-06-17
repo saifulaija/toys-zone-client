@@ -8,9 +8,9 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className="w-ful bg-[#161D32] p-6 md:p-6 h-[330px]">
+    <div className="w-ful bg-[#669bbc] p-6 md:p-6 h-[330px]">
       <footer className="my-container  mt-4">
-            <div className=" text-white  my_container space-y-2  md:flex items-center justify-between ">
+            <div className=" text-neutral-600 font-mono  my_container space-y-2  md:flex items-center justify-between ">
                 <div>
                 <div className="flex">
                 <MdOutlineToys className="text-xl md:text-3xl text-yellow-700"></MdOutlineToys>
@@ -41,10 +41,10 @@ const Footer = () => {
                 </div>
 
             </div>
-           <div className=" mt-4 md:mt-10 text-white">
+           <div className=" mt-6 md:mt-10 text-white">
             <div className="h-1 my_container bg-yellow-700"></div>
            
-            <p className="text-center">@copyright - 2023 || All Right Reserved by TOy Zone</p>
+            <p className="text-center text-gray-600">@copyright - 2023 || All Right Reserved by TOy Zone</p>
            </div>
 
       </footer>

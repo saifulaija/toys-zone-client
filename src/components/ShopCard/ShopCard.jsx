@@ -1,62 +1,64 @@
 import React, { useContext } from "react";
-import { BsFillArrowRightCircleFill} from "react-icons/bs";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaLocationArrow } from "react-icons/fa";
-import { Rating } from '@smastrom/react-rating';
-import '@smastrom/react-rating/style.css'
-FaLocationArrow
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+FaLocationArrow;
 
 const ShopCard = ({ toy }) => {
-
-  
   const navigation = useNavigation();
-  if(navigation.state === 'loading'){
-     return <Loader></Loader>
+  if (navigation.state === "loading") {
+    return <Loader></Loader>;
   }
-      const navigate = useNavigate()
+  const navigate = useNavigate();
 
-      const {user} = useContext(AuthContext);
-      
+  const { user } = useContext(AuthContext);
 
-
-  const  handleTo = ()=>{
-      if(!user){
-        alert('You have to login first to view details')
-        navigate('/login')
-      }
-  }
- 
-
+  const handleTo = () => {
+    if (!user) {
+      alert("You have to login first to view details");
+      navigate("/login");
+    }
+  };
 
   return (
-    <div className="border shadow-md border-dashed rounded-lg border-yellow-400 outline-none p-8 bg-[#161D32] ">
-
+    <div className="border shadow-xl border-dashed rounded-lg font-mono border-[#e15f5f] outline-none bg-[#669bbc] ">
       <div className=" p-4 flex items-center justify-center ">
-        <img className="w-[300px] h-[200px] hover:scale-110 duration-100  rounded-lg shadow-xl" src={toy?.image} alt="" />
+        <img
+          className="w-[300px] h-[200px] hover:scale-110 duration-100  rounded-lg shadow-xl"
+          src={toy?.image}
+          alt=""
+        />
       </div>
-      <div className="h-1 bg-yellow-700 mt-2"></div>
+      <p className="font-bold text-center py-4">Toys Name: {toy.toyName}</p>
 
-      <div className=" text-gray-600">
-        <p>name: {toy?.toyName}</p>
-        <p>category:{toy?.Category}</p>
-        <p>price: ${toy?.price}</p>
-        <div className="flex justify-between items-center mt-8 bottom-0">
-
-           <div>
-           <Rating style={{maxWidth:80}} value={toy?.rating} readOnly />
-           </div>
-          <Link to={`/homeDetails/${toy?._id}`}>
-          <button onClick={handleTo} className="primary-button bg-[#5A4C42] shadow-2xl"> View details <FaLocationArrow className="inline-block"></FaLocationArrow> </button>
-          </Link>
+      <div className=" text-gray-700">
+        <div className=" flex justify-evenly items-center border-[#e15f5f]">
+          <p>category:{toy?.Category}</p>
+          <p>price: ${toy?.price}</p>
         </div>
-        
+        <div className="">
+          <div className="flex justify-center items-center">
+            <Rating style={{ maxWidth: 80 }} value={toy?.rating} readOnly />
+            <span>({toy.rating})</span>
+          </div>
+          <div className="text-center py-2">
+            <Link to={`/homeDetails/${toy?._id}`}>
+              <button
+                onClick={handleTo}
+                className="primary-button   shadow-2xl"
+              >
+                {" "}
+                View details{" "}
+                <FaLocationArrow className="inline-block"></FaLocationArrow>{" "}
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
-       
-     
-
-
     </div>
   );
 };
