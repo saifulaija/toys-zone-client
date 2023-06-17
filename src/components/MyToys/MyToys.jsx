@@ -21,9 +21,9 @@ const MyToys = () => {
   console.log(user?.email);
   useTitle('MyToys')
 
-  // const url = `https://assignment-11-server-ivory.vercel.app/allToys?email=${user?.email}`;
+  // const url = `http://localhost:5000/allToys?email=${user?.email}`;
 
-  const url = `https://assignment-11-server-ivory.vercel.app/someToys?email=${user?.email}`;
+  const url = `http://localhost:5000/someToys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -43,7 +43,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${id}`, {
+        fetch(`http://localhost:5000/setToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -70,7 +70,7 @@ const MyToys = () => {
   const handleAscending=()=>{
    
       
-    fetch('https://assignment-11-server-ivory.vercel.app/sorts')
+    fetch('http://localhost:5000/sorts')
     .then(res=>res.json())
     .then(data=>{
      setToys(data);
@@ -87,7 +87,7 @@ const MyToys = () => {
 
 
        
-    fetch('https://assignment-11-server-ivory.vercel.app/sortsD')
+    fetch('http://localhost:5000/sortsD')
     .then(res=>res.json())
     .then(data=>{
      setToys(data);

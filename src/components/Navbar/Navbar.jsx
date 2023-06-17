@@ -29,13 +29,12 @@ const Navbar = () => {
         <NavLink to="/allToys">AllToys</NavLink>
       </li>
       <li>
-            <NavLink to="/addToy">AddaToy</NavLink>
-          </li>
+        <NavLink to="/addToy">AddaToy</NavLink>
+      </li>
 
       {user ? (
         <>
           {" "}
-          
           <li>
             {" "}
             <NavLink onClick={handleLogOut} to="/login">
@@ -62,7 +61,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full sticky top-0 z-10 bg-[#161D32]">
+    <div className="w-full sticky top-0 z-30 bg-[#161D32]">
       <div className=" my_container flex justify-between items-center p-8 ">
         <div className="flex items-center">
           <MdOutlineToys className="text-yellow-700 text-[40px] "></MdOutlineToys>
@@ -71,10 +70,14 @@ const Navbar = () => {
           </h1>
         </div>
 
-        <ul className=" hidden md:flex space-x-4">{navItem}</ul>
+        <ul className=" border-[1px] p-2 shadow-2xl bg-yellow-100 rounded-2xl hidden md:flex space-x-4">{navItem}</ul>
 
         <div onClick={handleNav} className="block md:hidden">
-          {navOpen ? <AiOutlineClose size={20} className="text-white" /> : <AiOutlineMenu size={20} className="text-white" />}
+          {navOpen ? (
+            <AiOutlineClose size={20} className="text-white" />
+          ) : (
+            <AiOutlineMenu size={20} className="text-white" />
+          )}
         </div>
 
         <ul

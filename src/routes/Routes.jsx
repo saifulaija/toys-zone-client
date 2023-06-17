@@ -42,7 +42,7 @@ import HomeDetails from "../components/HomeDetails/HomeDetails";
            {
            path:'update/:id',
            element:<Update></Update>,
-           loader:({params})=> fetch(`https://assignment-11-server-ivory.vercel.app/update/${params.id}`)
+           loader:({params})=> fetch(`http://localhost:5000/update/${params.id}`)
            },
            {
             path:'allToys',
@@ -53,7 +53,7 @@ import HomeDetails from "../components/HomeDetails/HomeDetails";
             element:<PrivateRoute>
                 <ViewDetails></ViewDetails>
             </PrivateRoute>,
-            loader:({params})=> fetch(`https://assignment-11-server-ivory.vercel.app/detailsId/${params.id}`)
+            loader:({params})=> fetch(`http://localhost:5000/detailsId/${params.id}`)
            },
            {
             path:'blog',
@@ -64,7 +64,7 @@ import HomeDetails from "../components/HomeDetails/HomeDetails";
             element:<PrivateRoute>
                 <HomeDetails></HomeDetails>
             </PrivateRoute>,
-             loader:({params})=> fetch(`https://assignment-11-server-ivory.vercel.app/detailsId/${params.id}`)
+             loader:({params})=> fetch(`http://localhost:5000/detailsId/${params.id}`)
            }
 
         ]

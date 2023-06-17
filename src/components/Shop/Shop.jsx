@@ -26,7 +26,7 @@ const Shop = () => {
   useEffect(() => {
 
 
-    fetch(`https://assignment-11-server-ivory.vercel.app/filter/${activeTab}`)
+    fetch(`http://localhost:5000/filter/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
