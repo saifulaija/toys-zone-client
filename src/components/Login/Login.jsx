@@ -7,6 +7,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/config';
 import useTitle from '../../hooks/useTitle';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
@@ -35,6 +36,7 @@ const Login = () => {
                   console.log(loggedUser);
                   // navigate('/')
                   navigate(from, {replace:true})
+                  toast.success('Login successful')
       
             })
             .catch(error=>{
@@ -51,6 +53,7 @@ const Login = () => {
             .then(result=>{
                   const user= result.user;
                   console.log(user);
+                  toast.success('Login successful')
                   navigate('/')
                   navigate(from, {replace:true})
             })

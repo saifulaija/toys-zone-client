@@ -16,7 +16,7 @@
       }
 
       .text-input{
-            @apply p-4 rounded-md outline-none border border-yellow-950 bg-slate-100
+            @apply p-4 rounded-md outline-none border-[1px]  border-rose-950 bg-slate-100
 
       }
       .primary-button{

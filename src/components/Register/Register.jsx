@@ -40,6 +40,7 @@ const Register = () => {
                 updateProfile(auth.currentUser, {
                     displayName, photoURL 
                   }).then(() => {
+                    toast.success('Create Account successful')
                    
                   }).catch((error) => {
                    

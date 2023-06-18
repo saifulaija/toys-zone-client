@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
+import { Toaster } from "react-hot-toast";
 
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
@@ -13,6 +14,7 @@ import AuthProvider from './provider/AuthProvider'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <AuthProvider>
+  <Toaster></Toaster>
   <RouterProvider router={router}>
 
 </RouterProvider>

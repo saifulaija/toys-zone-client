@@ -4,76 +4,49 @@ import { FiDelete } from "react-icons/fi";
 
 import { GrUpdate } from "react-icons/gr";
 import { Link, useNavigation } from "react-router-dom";
-import Swal from "sweetalert2";
+
 import useTitle from "../../hooks/useTitle";
 import Loader from "../Loader/Loader";
+import { toast } from "react-hot-toast";
 
 const MyToys = () => {
   const navigation = useNavigation();
-  const [asc, setAsc] = useState(true)
+  const [asc, setAsc] = useState(true);
+  const [toys, setToys] = useState([]);
   if (navigation.state === "loading") {
     return <Loader></Loader>;
   }
 
   const { user } = useContext(AuthContext);
-  const [toys, setToys] = useState([]);
+
   console.log(user?.email);
   useTitle("MyToys");
 
-  // const url = `http://localhost:5000/allToys?email=${user?.email}`;
-
-  const url = `http://localhost:5000/someToys?email=${user?.email}`;
-
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setToys(data));
-  }, [user]);
-  console.log(toys);
-
-  const handleDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/setToys/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
-
-              //   setToys(remaining);
-            }
-            const remaining = toys.filter((toy) => toy._id !== id);
-            setToys(remaining);
-          });
-      }
-    });
-  };
-
-  const handleAscending = () => {
-    fetch("http://localhost:5000/sorts")
+    fetch(
+      `http://localhost:5000/products/${user?.email}?sort=${
+        asc ? "asc" : "dsc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
       });
-  };
+  }, [asc]);
 
-  const handleDecending = () => {
-    fetch("http://localhost:5000/sortsD")
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/setToys/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
+
       .then((data) => {
-        setToys(data);
+        if (data.deletedCount > 0) {
+          toast.success("Deleted successful");
+          //   setToys(remaining);
+        }
+        const remaining = toys.filter((toy) => toy._id !== id);
+        setToys(remaining);
       });
   };
 
@@ -81,10 +54,15 @@ const MyToys = () => {
     <div className="">
       <h1 className="heading my-20">Your All Toys</h1>
 
-  <div className="text-end mb-6 me-4">
-    <button className="bg-rose-500 px-4 py-1 text-white rounded-lg" onClick={()=> setAsc(!asc)}>{asc? 'Price: High To Low' : 'Price: Low To High'}</button>
-  </div>
-        
+      <div className="text-end mb-6 me-4">
+        <button
+          className="bg-rose-500 px-4 py-1 text-white rounded-lg"
+          onClick={() => setAsc(!asc)}
+        >
+          {asc ? "Price: High To Low" : "Price: Low To High"}
+        </button>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
@@ -96,8 +74,9 @@ const MyToys = () => {
               <th>Toy Name</th>
               <th>Category</th>
               <th>sub Category</th>
-              <th>Price</th>
+
               <th>Quantity</th>
+              <th>Price</th>
               <th>Rating</th>
               <th>Edit</th>
               <th>Action</th>
