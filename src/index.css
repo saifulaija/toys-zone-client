@@ -29,7 +29,7 @@
             @apply text-3xl font-bold underline underline-offset-4
       }
       .image{
-            @apply rounded-lg  w-full border border-red-200 md:w-[400px] h-[300px] shadow-2xl p-4  md:hover:scale-125 duration-300
+            @apply rounded-lg  w-full border  md:w-[400px] h-[300px] shadow-2xl p-4  md:hover:scale-110 duration-300
       }
 
       .secondary-button{

@@ -61,8 +61,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full sticky top-0 z-30 border-[1px] bg-[#669bbc]">
-      <div className=" my_container flex justify-between items-center p-8 ">
+    <div className="w-full h-[80px] sticky top-0 z-30 border-[1px] bg-[#669bbc]">
+      <div className=" my_container flex justify-between items-center p-2 ">
         <div className="flex items-center font-mono">
           <MdOutlineToys className="text-[#e15f5f] text-[40px] "></MdOutlineToys>
           <h1 className="text-[#e15f5f] font-mono  font-bold uppercase md:text-4xl">
