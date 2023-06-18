@@ -51,8 +51,8 @@ const MyToys = () => {
   };
 
   return (
-    <div className="">
-      <h1 className="heading my-20">Your All Toys</h1>
+    <div className=" w-full pb-16">
+      <h1 className="heading my-10">Your All Toys</h1>
 
       <div className="text-end mb-6 me-4">
         <button

@@ -12,7 +12,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="w-ful bg-[#669bbc] p-6 font-mono md:p-6 h-[330px]">
+    <div className="w-ful bg-[#669bbc] p-6 font-mono md:p-6 h-[340px]">
       <footer className="my-container  mt-4">
         <div className=" text-neutral-600 font-mono  my_container space-y-2  md:flex items-center justify-between ">
           <div>
