@@ -28,7 +28,7 @@ const Banner = () => {
             board games, puzzles, building blocks, stuffed animals, vehicles,
             and electronic.
           </p>
-          <button className=" bg-[#5A4C42]  px-6 py-2 text-yellow-700  rounded-lg animate-bounce uppercase tracking-widest">
+          <button className=" bg-[#DF437E]  px-6 py-2 text-neutral-200  rounded-lg animate-bounce uppercase tracking-widest">
             Get Started{" "}
             <AiOutlineShoppingCart className="ml-2 inline-block"></AiOutlineShoppingCart>{" "}
           </button>

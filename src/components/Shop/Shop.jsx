@@ -7,6 +7,8 @@ import "react-tabs/style/react-tabs.css";
 
 const Shop = () => {
   const navigation = useNavigation();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(6)
   if (navigation.state === "loading") {
     return <Loader></Loader>;
   }
@@ -15,7 +17,7 @@ const Shop = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("https://assignment-11-server-ivory.vercel.app/all-toys")
+    fetch("http://localhost:5000/all-toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -27,6 +29,13 @@ const Shop = () => {
   const sports = toys.filter((toy) => toy.Category === "Sports");
   const police = toys.filter((toy) => toy.Category === "Police");
 
+  const lastPostIndex = currentPage + postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+
+  const currentPosts = toys.slice(firstPostIndex, lastPostIndex) 
+
+
+
   return (
     <div className="w-full bg-white">
       <div className="my_container md:p-14">
@@ -36,7 +45,7 @@ const Shop = () => {
             defaultIndex={tabIndex}
             onSelect={(index) => setTabIndex(index)}
           >
-            <TabList className=" font-semibold border-[1px] border-[#e15f5f]">
+            <TabList className=" font-light border-[2px] border-[#DF437E]">
               <Tab>All Toys</Tab>
               <Tab>Category One</Tab>
               <Tab>Category Two</Tab>
@@ -73,6 +82,7 @@ const Shop = () => {
           </Tabs>
         </div>
       </div>
+      
     </div>
   );
 };

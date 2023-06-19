@@ -25,7 +25,7 @@ const ShopCard = ({ toy }) => {
   };
 
   return (
-    <div className=" shadow-xl  rounded-lg font-mono outline-none bg-[#F7F1E5] ">
+    <div className=" shadow-xl  rounded-lg md:font-mono outline-none bg-[#F7F1E5] ">
       <div className=" p-4 flex items-center justify-center ">
         <img
           className="w-[300px] h-[200px] hover:scale-110 duration-100  rounded-lg shadow-xl"

@@ -24,9 +24,9 @@ const About = () => {
             />
           </div>
 
-          <div className="divider lg:divider-horizontal new">toy</div>
+          <div className="divider lg:divider-horizontal new text-[#DF437E]">toy</div>
           <div
-            className="w-full md:w-1/2 space-y-8"
+            className="w-full md:w-1/2 p-4 md:space-y-8"
             data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500"

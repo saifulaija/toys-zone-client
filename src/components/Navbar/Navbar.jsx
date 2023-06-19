@@ -74,7 +74,7 @@ const Navbar = () => {
 
         <div onClick={handleNav} className="block md:hidden">
           {navOpen ? (
-            <AiOutlineClose size={20} className="bg-black" />
+            <AiOutlineClose size={20} className="text-black" />
           ) : (
             <AiOutlineMenu size={20} className="text-black" />
           )}

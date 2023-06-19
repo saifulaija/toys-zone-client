@@ -42,7 +42,7 @@ const AddToy = () => {
     };
 
     console.log(data);
-    fetch("https://assignment-11-server-ivory.vercel.app/setToys", {
+    fetch("http://localhost:5000/setToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

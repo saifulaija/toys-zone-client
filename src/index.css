@@ -33,12 +33,12 @@
       }
 
       .secondary-button{
-            @apply px-8  outline-none border-[2px] border-[#DF437E] uppercase tracking-widest font-bold   rounded-full py-2
+            @apply px-4  outline-none border-[2px] border-[#DF437E]   font-semibold text-neutral-500 font-mono   rounded-md py-0
       }
       .new{
             @apply text-yellow-700 uppercase font-semibold
       }
       .service{
-            @apply shadow-md border-dashed border border-orange-300 p-6 bg-[#F7F1E5] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md 
+            @apply shadow-xl font-mono p-2 md:p-6 bg-[#F7F1E5] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md 
       }
 }

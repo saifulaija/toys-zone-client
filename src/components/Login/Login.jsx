@@ -127,13 +127,13 @@ const Login = () => {
                     <AiOutlineLogin  className="ml-8 text-xl font-bold"></AiOutlineLogin>
                   </button>
                 </div>
-                <p>
+                <p className='text-neutral-200'>
                   Are you new?
                   <Link to="/register">
-                    <button className="btn btn-link inline-block text-yellow-700  ">Go to Register</button>
+                    <button className="btn btn-link inline-block text-[#DF437E]  ">Go to Register</button>
                   </Link>
                 </p>
-                <div className="divider">OR</div>
+                <div className="divider text-[#DF437E]">OR</div>
                <div className="flex items-center justify-center">
                <button onClick={handleGoogleSignIn} className="btn  btn-circle btn-outline"><FcGoogle className="text-xl"></FcGoogle></button>
                </div>

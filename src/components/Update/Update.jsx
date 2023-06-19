@@ -28,7 +28,7 @@ const Update = () => {
       quantity,
     };
     console.log(updatedData);
-    fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${toy?._id} `, {
+    fetch(`http://localhost:5000/setToys/${toy?._id} `, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
