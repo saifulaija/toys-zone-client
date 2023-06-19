@@ -15,7 +15,7 @@ const Shop = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-toys")
+    fetch("https://assignment-11-server-ivory.vercel.app/all-toys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

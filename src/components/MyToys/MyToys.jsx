@@ -24,7 +24,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/products/${user?.email}?sort=${
+      `https://assignment-11-server-ivory.vercel.app/products/${user?.email}?sort=${
         asc ? "asc" : "dsc"
       }`
     )
@@ -35,7 +35,7 @@ const MyToys = () => {
   }, [asc]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/setToys/${id}`, {
+    fetch(`https://assignment-11-server-ivory.vercel.app/setToys/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

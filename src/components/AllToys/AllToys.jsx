@@ -19,7 +19,7 @@ const AllToys = () => {
   useTitle('allToys')
 
   useEffect(()=>{
-      fetch('http://localhost:5000/allToys')
+      fetch('https://assignment-11-server-ivory.vercel.app/allToys')
       .then(res=>res.json())
       .then(data=>{
             console.log(data);
@@ -28,7 +28,7 @@ const AllToys = () => {
   },[user])
 
   const handleSearch =()=>{
-      fetch(`http://localhost:5000/toysSearch/${searchText}`)
+      fetch(`https://assignment-11-server-ivory.vercel.app/toysSearch/${searchText}`)
       .then(res=>res.json())
       .then(data=>{
             setToys(data);
