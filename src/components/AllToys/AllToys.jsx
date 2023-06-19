@@ -42,12 +42,12 @@ const AllToys = () => {
 
 
   return (
-    <div className=" my-container">
+    <div className=" my-container my-6">
       <h1 className="heading my-10"> All Toys </h1>
       
-     <div className="flex items-center justify-center">
+     <div className="flex items-center justify-center]">
        
-     <div className="form-control my-10 ">
+     <div className="form-control mx-auto my-10 ">
         <div className="input-group">
           <input
            onChange={(e)=>setSearchText(e.target.value)}
@@ -110,7 +110,7 @@ const AllToys = () => {
                
                 <td>
                   <Link to={`/viewDetails/${toy?._id}`}>
-                    <button className="primary-button bg-[#335882]">
+                    <button className="border-[2px] px-4 rounded-lg border-[#DF437E]">
                       details{" "}
                       <BiStreetView className="inline-block text-yellow-700 ml-2"></BiStreetView>
                     </button>

@@ -8,7 +8,7 @@ AiFillCustomerService
 const Service = () => {
 
       return (
-            <div className='w-full bg-[#E5E4DF] p-16 '>
+            <div className='w-full p-16 '>
                   <h1 className='heading my-6'>our Service</h1>
                   <p className='text-center'>Toy Zone  during, and after a purchase or interaction. It involves addressing customer  inquiries, resolving issues, providing information, <br /> and ensuring customer satisfaction</p>
                  

@@ -11,7 +11,7 @@
             @apply font-semibold text-[18px] font-mono text-neutral-600 
       }
       .heading{
-            @apply text-center text-[#e15f5f] font-bold text-xl md:text-4xl uppercase font-mono  underline underline-offset-4 
+            @apply text-center text-[#DF437E] font-bold text-xl md:text-4xl uppercase font-mono  underline underline-offset-4 
       
       }
 
@@ -20,7 +20,7 @@
 
       }
       .primary-button{
-            @apply  px-4 py-2 rounded-full text-white  font-semibold font-mono bg-[#e15f5f]  tracking-widest transition duration-200
+            @apply  px-4 py-2 rounded-full text-white  font-semibold font-mono bg-[#DF437E]  tracking-widest transition duration-200
       }
       .primary-color{
             @apply bg-[#ffddd2]
@@ -33,12 +33,12 @@
       }
 
       .secondary-button{
-            @apply px-8 text-teal-900 outline-none border border-yellow-700 hover:bg-[#669bbc] duration-300 uppercase tracking-widest font-bold   rounded-full py-2
+            @apply px-8  outline-none border-[2px] border-[#DF437E] uppercase tracking-widest font-bold   rounded-full py-2
       }
       .new{
             @apply text-yellow-700 uppercase font-semibold
       }
       .service{
-            @apply shadow-md border-dashed border border-orange-300 p-6 bg-[#ECE8DE] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md 
+            @apply shadow-md border-dashed border border-orange-300 p-6 bg-[#F7F1E5] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md 
       }
 }

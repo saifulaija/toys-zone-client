@@ -42,7 +42,7 @@ const About = () => {
               questions or need assistance with a particular subject, feel free
               to ask!
             </p>
-            <button className="primary-button bg-[#5A4C42] text-white">
+            <button className="primary-button bg-[#DF437E] text-white">
               Explore More{" "}
               <CiViewColumn className="inline-block"></CiViewColumn>{" "}
             </button>

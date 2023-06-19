@@ -61,16 +61,16 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full h-[80px] sticky top-0 z-30 border-[1px] bg-[#669bbc]">
+    <div className="w-full h-[80px] sticky top-0 z-30 border-[1px] bg-[#F7F1E5]">
       <div className=" my_container flex justify-between items-center p-2 ">
         <div className="flex items-center font-mono">
-          <MdOutlineToys className="text-[#e15f5f] text-[40px] "></MdOutlineToys>
-          <h1 className="text-[#e15f5f] font-mono  font-bold uppercase md:text-4xl">
+          <MdOutlineToys className="text-[#DF437E] text-[40px] "></MdOutlineToys>
+          <h1 className="text-[#DF437E] font-mono  font-bold uppercase md:text-4xl">
             Toys Zone
           </h1>
         </div>
 
-        <ul className="  p-2 border-[1px] border-[#e15f5f] rounded-2xl hidden md:flex space-x-4">{navItem}</ul>
+        <ul className=" p-4 hidden md:flex space-x-4">{navItem}</ul>
 
         <div onClick={handleNav} className="block md:hidden">
           {navOpen ? (

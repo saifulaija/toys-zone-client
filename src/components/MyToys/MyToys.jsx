@@ -56,7 +56,7 @@ const MyToys = () => {
 
       <div className="text-end mb-6 me-4">
         <button
-          className="bg-rose-500 px-4 py-1 text-white rounded-lg"
+          className="bg-[#DF437E] px-4 py-1 text-white rounded-lg"
           onClick={() => setAsc(!asc)}
         >
           {asc ? "Price: High To Low" : "Price: Low To High"}
@@ -97,7 +97,7 @@ const MyToys = () => {
                 <td>{toy.rating}</td>
                 <td>
                   <Link to={`/update/${toy._id}`}>
-                    <button className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase ">
+                    <button className=" border-[2px] border-[#DF437E] px-4 text-yellow-700 rounded-lg  font-bold uppercase ">
                       Update{" "}
                       <GrUpdate className="inline-block text-yellow-700 ml-2"></GrUpdate>
                     </button>
@@ -106,7 +106,7 @@ const MyToys = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(toy._id)}
-                    className="bg-[#f9ebdf] px-4 py-2 text-yellow-700 rounded-lg  font-bold uppercase "
+                    className=" border-[2px] border-[#DF437E] px-4 text-yellow-700 rounded-lg  font-bold uppercase "
                   >
                     Delete <FiDelete className="inline-block "></FiDelete>
                   </button>

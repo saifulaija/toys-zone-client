@@ -25,7 +25,7 @@ const ShopCard = ({ toy }) => {
   };
 
   return (
-    <div className=" shadow-xl  rounded-lg font-mono border-[#e15f5f] outline-none bg-[#d4e6f5] ">
+    <div className=" shadow-xl  rounded-lg font-mono outline-none bg-[#F7F1E5] ">
       <div className=" p-4 flex items-center justify-center ">
         <img
           className="w-[300px] h-[200px] hover:scale-110 duration-100  rounded-lg shadow-xl"
@@ -47,7 +47,7 @@ const ShopCard = ({ toy }) => {
           </div>
           <div className="text-center py-2">
             <Link to={`/homeDetails/${toy?._id}`}>
-              <button onClick={handleTo} className=" outline-none text-white border-[#d4e6f5]  border-[1px] bg-[#e15f5f] hover:bg-opacity-60  px-2 rounded-full   shadow-2xl">
+              <button onClick={handleTo} className=" outline-none text-gray-500 border-[#DF437E]  border-[2px]   hover:bg-opacity-60  px-2 rounded-lg   shadow-2xl">
                 {" "}
                 View details{" "}
                 <FaLocationArrow className="inline-block"></FaLocationArrow>{" "}

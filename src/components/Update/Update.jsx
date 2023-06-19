@@ -51,12 +51,12 @@ const Update = () => {
   }
 
   return (
-    <div className="w-full md:p-20">
+    <div className="w-full p-6 md:p-20">
       <h1 className="heading py-10 "> You Can Update Toy</h1>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" bg-[#669bbc] rounded-xl flex w-full md:w-1/2 flex-col p-10 shadow-2xl space-y-4 mx-auto"
+        className=" bg-[#1d1d1b] rounded-xl flex w-full md:w-1/2 flex-col p-10 shadow-2xl space-y-4 mx-auto"
       >
         <div className="flex flex-col">
           <label className="text-neutral-300 font-bold font-mono">Price</label>

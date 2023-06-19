@@ -91,7 +91,7 @@ const Login = () => {
 
         <div className=" mx-auto">
           <div className="hero-content flex-col ">
-            <div className=" border-2 rounded-md bg-[#335882] p-10  ">
+            <div className=" border-2 rounded-md bg-[#1d1d1b] p-10  ">
               <form onSubmit={handleLogin} className=" my_container">
                
                
@@ -122,7 +122,7 @@ const Login = () => {
                 </div>
                 <p className='text-yellow-600'>{error}</p>
                 <div className="form-control mt-6">
-                  <button className="btn btn-success tracking-widest mt-10 text-white">
+                  <button className="btn btn-success bg-[#DF437E] tracking-widest mt-10 text-white">
                     Login now{" "}
                     <AiOutlineLogin  className="ml-8 text-xl font-bold"></AiOutlineLogin>
                   </button>

@@ -12,13 +12,13 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="w-ful bg-[#669bbc] p-6 font-mono md:p-6 h-[340px]">
+    <div className="w-ful bg-[#1d1d1b] p-6 font-mono md:p-6 h-[340px]">
       <footer className="my-container  mt-4">
         <div className=" text-neutral-600 font-mono  my_container space-y-2  md:flex items-center justify-between ">
           <div>
             <div className="flex">
-              <MdOutlineToys className="text-xl md:text-3xl text-[#e15f5f]"></MdOutlineToys>
-              <h1 className="text-xl md:3xl font-bold uppercase tracking-widest font-serif text-[#e15f5f]">
+              <MdOutlineToys className="text-xl md:text-3xl text-[#DF437E]"></MdOutlineToys>
+              <h1 className="text-xl md:3xl font-bold uppercase tracking-widest font-serif text-[#DF437E]">
                 toys zone
               </h1>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <p>Our Mission</p>
             <p>Customer Care</p>
           </div>
-          <div className="flex text-yellow-700 gap-4">
+          <div className="flex text-[#DF437E] gap-4">
             <p>
               <FaFacebook></FaFacebook>
             </p>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
         <div className=" mt-6 md:mt-10 text-white">
-          <div className="h-1 my_container bg-[#e15f5f]"></div>
+          <div className="h-1 my_container bg-[#DF437E]"></div>
 
           <p className="text-center text-gray-600">
             @copyright - 2023 || All Right Reserved by TOy Zone
