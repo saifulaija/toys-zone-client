@@ -24,7 +24,7 @@
 
 //   useEffect(() => {
 //     fetch(
-//       ` http://localhost:5000/products/${user?.email}?sort=${
+//       ` https://assignment-11-server-saifulaija.vercel.app/products/${user?.email}?sort=${
 //         asc ? "asc" : "dsc"
 //       }`
 //     )
@@ -35,7 +35,7 @@
 //   }, [asc]);
 
 //   const handleDelete = (id) => {
-//     fetch(` http://localhost:5000/setToys/${id}`, {
+//     fetch(` https://assignment-11-server-saifulaija.vercel.app/setToys/${id}`, {
 //       method: "DELETE",
 //     })
 //       .then((res) => res.json())
@@ -149,7 +149,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/products/${user?.email}?sort=${asc ? "asc" : "dsc"}`
+      `https://assignment-11-server-saifulaija.vercel.app/products/${user?.email}?sort=${asc ? "asc" : "dsc"}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -158,7 +158,7 @@ const MyToys = () => {
   }, [asc]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/setToys/${id}`, {
+    fetch(`https://assignment-11-server-saifulaija.vercel.app/setToys/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
