@@ -20,16 +20,24 @@ const Navbar = () => {
   const navItem = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="font-serif" to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/blog">Blog</NavLink>
+        <NavLink className="font-serif" to="/blog">
+          Blog
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/allToys">AllToys</NavLink>
+        <NavLink className="font-serif" to="/allToys">
+          AllToys
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/addToy">AddaToy</NavLink>
+        <NavLink className="font-serif" to="/addToy">
+          AddaToy
+        </NavLink>
       </li>
 
       {user ? (
@@ -37,13 +45,15 @@ const Navbar = () => {
           {" "}
           <li>
             {" "}
-            <NavLink onClick={handleLogOut} to="/login">
-              Logout
+            <NavLink className="font-serif" to="/myToys">
+              Mytoys
             </NavLink>
           </li>
           <li>
             {" "}
-            <NavLink to="/myToys">Mytoys</NavLink>
+            <NavLink onClick={handleLogOut} to="/login">
+              Logout
+            </NavLink>
           </li>
           <img
             className="w-[40px] rounded-full"
@@ -54,7 +64,9 @@ const Navbar = () => {
         </>
       ) : (
         <li>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink className="font-serif" to="/login">
+            Login
+          </NavLink>
         </li>
       )}
     </>
@@ -63,9 +75,9 @@ const Navbar = () => {
   return (
     <div className="w-full h-[80px] sticky top-0 z-30 border-[1px] bg-[#F7F1E5]">
       <div className=" my_container flex justify-between items-center p-2 ">
-        <div className="flex items-center font-mono">
+        <div className="flex items-center font-serif">
           <MdOutlineToys className="text-[#DF437E] text-[40px] "></MdOutlineToys>
-          <h1 className="text-[#DF437E] font-mono  font-bold uppercase md:text-4xl">
+          <h1 className="text-[#DF437E] font-serif  font-bold uppercase md:text-4xl">
             Toys Zone
           </h1>
         </div>
@@ -87,7 +99,7 @@ const Navbar = () => {
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >
-          <h1 className="text-yellow-700  font-bold uppercase tracking-wider text-xl">
+          <h1 className="text-[#DF437E]  font-bold uppercase tracking-wider text-xl">
             Toys Zone
           </h1>
           {navItem}

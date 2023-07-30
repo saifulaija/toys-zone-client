@@ -1,54 +1,52 @@
-import React from 'react';
-import { FaLaptopMedical } from "react-icons/fa";
-import { AiFillCustomerService } from "react-icons/ai";
-import { GrDeliver } from "react-icons/gr";
-import Marquee from "react-fast-marquee";
+import React from "react";
+import { FaLaptopMedical, FaUsers, FaTruck } from "react-icons/fa";
 
-AiFillCustomerService
 const Service = () => {
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <h1 className=" text-2xl md:text-4xl font-bold text-[#DF437E] text-center mb-6">Our Services</h1>
+      <p className="text-center text-gray-600">
+        Toy Zone offers exceptional services before, during, and after a
+        purchase or interaction. We strive to provide excellent <br /> customer
+        assistance, address inquiries, resolve issues, and ensure customer
+        satisfaction.
+      </p>
 
-      return (
-            <div className='w-full p-16 '>
-                  <h1 className='heading my-6'>our Service</h1>
-                  <p className='text-center'>Toy Zone  during, and after a purchase or interaction. It involves addressing customer  inquiries, resolving issues, providing information, <br /> and ensuring customer satisfaction</p>
-                 
-                 <div className='grid gap-8 my-6 md:grid-cols-3 '>
-                        <div className='service'>
-                              <div className='flex items-center justify-center'>
-                              <FaLaptopMedical className='text-7xl text-center animate-bounce'></FaLaptopMedical>
-                              </div>
-                              <h3 className='text-xl font-bold '>Tecnical support.</h3>
-                              <p>Customer service refers to the assistance and support provided by a company or organization to its customers before, during, and after a purchase or interaction. It involves addressing customer inquiries, resolving issues, providing information, and ensuring customer satisfaction</p>
-                              <button className=' secondary-button '>Know more</button>
-                          </div>
-                          
-                          <div className='service w-full'>
-                              <div className='flex items-center justify-center'>
-                              <AiFillCustomerService className='text-7xl text-center animate-bounce'></AiFillCustomerService>
-                              </div>
-                              <h3 className='text-xl font-bold '>Cutomer Service</h3>
-                             <div>
-                             <p>Customer service refers to the assistance and support provided by a company or organization to its customers before, during, and after a purchase or interaction. It involves addressing customer inquiries, resolving issues, providing information, and ensuring customer satisfaction</p>
-                             </div>
-                              <button className=' secondary-button '>Know More</button>
-                        </div>
-                          
-                        
-                        
-                        <div className='service'>
-                             <div className='flex items-center justify-center'>
-                             <GrDeliver  className='text-7xl text-center animate-bounce'></GrDeliver>
-                             </div>
-                              <h3 className='text-xl font-bold '>Home Delivery</h3>
-                              <p>Home delivery service refers to the assistance and support provided by a company or organization to its customers before, during, and after a purchase or interaction. It involves addressing customer inquiries, resolving issues, providing information, and ensuring customer satisfaction</p>
-                              <button className=' secondary-button '>Know More</button>
-                        </div>
-                  </div>
-                 
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mt-8">
+        <div className="bg-gray-100 hover:translate-y-3 transition font-serif rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+          <FaLaptopMedical className="text-6xl text-red-600 mb-4" />
+          <h3 className="text-xl font-bold mb-2">Technical Support</h3>
+          <p className="text-justify text-gray-600">
+            Our dedicated technical support team is available to assist you
+            with any inquiries or issues you may have. We are here to ensure
+            your satisfaction with our products and services.
+          </p>
+          <button className="px-4 py-1 font-semibold text-white rounded-lg bg-[#DF437E] hover:bg-[#943056] mt-4">Know More</button>
+        </div>
 
-                  
-            </div>
-      );
+        <div className="bg-gray-100 hover:translate-y-3 transition font-serif rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+          <FaUsers className="text-6xl text-blue-600 mb-4" />
+          <h3 className="text-xl font-bold mb-2">Customer Service</h3>
+          <p className="text-justify text-gray-600">
+            Our customer service team is dedicated to providing you with a
+            delightful experience. We are here to answer your queries and
+            address any concerns you may have throughout with our products and services.
+          </p>
+          <button className="px-4 py-1 font-semibold text-white rounded-lg bg-[#DF437E] hover:bg-[#943056] mt-4">Know More</button>
+        </div>
+
+        <div className="bg-gray-100 hover:translate-y-3 transition font-serif rounded-lg shadow-lg p-6 flex flex-col items-center justify-center">
+          <FaTruck className="text-6xl text-green-600 mb-4" />
+          <h3 className="text-xl font-bold mb-2">Home Delivery</h3>
+          <p className="text-justify text-gray-600">
+            Enjoy the convenience of our home delivery service. We ensure your
+            purchases are delivered safely and promptly to your doorstep with our products and services.
+          </p>
+          <button className="px-4 py-1 font-semibold text-white rounded-lg bg-[#DF437E] hover:bg-[#943056] mt-4">Know More</button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Service;
