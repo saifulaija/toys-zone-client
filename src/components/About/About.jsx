@@ -5,11 +5,11 @@ import { CiViewColumn } from "react-icons/ci";
 
 const About = () => {
   return (
-    <div className="w-full bg-white p-10 md:p-16 ">
-      <div className="  my_container rounded-2xl shadow-2xl">
+    <div className="w-full p-8 md:p-10  ">
+      <div className="  my_container rounded-2xl ">
         <h1 className="heading my-12">About Us</h1>
 
-        <div className="  md:p-16 text-gray-600 gap-16 md:flex justify-between items-center">
+        <div className="border  md:p-16 text-gray-600 gap-16 md:flex justify-between items-center">
           <div
             className=" w-full md:w-1/2 relative "
             data-aos="fade-down"
@@ -31,10 +31,10 @@ const About = () => {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <h1 className="text-3xl mt-28 font-bold uppercase tracking-widest underline-offset-2">
+            <h1 className="text-3xl text-gray-300 mt-28 font-bold uppercase tracking-widest underline-offset-2">
               Our Mission
             </h1>
-            <p>
+            <p className="text-white">
               My mission as an AI language model is to assist and provide
               helpful and accurate information to users like you. I strive to
               answer questions, engage in conversation, and assist with various

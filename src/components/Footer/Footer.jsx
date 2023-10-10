@@ -91,13 +91,13 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-800 p-6 font-serif md:p-6 h-[340px]">
+    <div className="w-full border border-t-[1px] p-6 font-serif md:p-6 h-[340px]">
       <footer className="my-container mt-4">
         <div className="text-white font-serif my_container space-y-2 md:flex items-center justify-between">
           <div>
             <div className="flex items-center">
-              <MdOutlineToys className="text-3xl text-[#DF437E]" />
-              <h1 className="text-3xl font-bold uppercase tracking-widest text-[#DF437E]">
+            <img src="https://i.ibb.co/64gswsz/toylogo.png" alt="" />
+              <h1 className="text-3xl font-bold uppercase tracking-widest text-gray-300">
                 Toys Zone
               </h1>
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
             <p>Our Mission</p>
             <p>Customer Care</p>
           </div>
-          <div className="flex text-[#DF437E] gap-4">
+          <div className="flex text-white gap-4">
             <FaFacebook />
             <FaTwitter />
             <FaInstagram />
@@ -129,9 +129,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-6 md:mt-10 text-white">
-          <div className="h-1 my_container bg-[#DF437E]" />
+          <div className="h-1 my_container bg-gray-200" />
 
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-200">
             &copy; {new Date().getFullYear()} || All Rights Reserved by Toy Zone
           </p>
         </div>

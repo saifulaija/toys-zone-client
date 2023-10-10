@@ -64,12 +64,12 @@ const AddToy = () => {
   };
 
   return (
-    <div className="w-full pb-10 md:p-10">
+    <div className="w-full  pb-10 md:p-10">
       <h1 className="heading py-10 ">Now You Can Added Toy</h1>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex md:w-1/2 flex-col  bg-[#1d1d1b] p-10 rounded-md space-y-4 mx-auto"
+        className=" flex md:w-1/2 flex-col  p-6 rounded-md border space-y-4 mx-auto"
       >
         <input
           className="text-input outline-none border-2"
@@ -132,8 +132,8 @@ const AddToy = () => {
         />
 
         <input
-          className="submit-btn cursor-pointer bg-[#DF437E] px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
-          value="Post Job"
+         className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2"
+          value="Add Toy"
           type="submit"
         />
       </form>

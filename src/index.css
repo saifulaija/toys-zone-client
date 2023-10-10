@@ -2,43 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-      .my_container{
-            @apply max-w-[1240px] mx-auto
-      }
+@layer base {
+  .my_container {
+    @apply max-w-[1240px] mx-auto;
+  }
 
-      li{
-            @apply font-semibold text-[18px] font-mono text-neutral-600 
-      }
-      .heading{
-            @apply text-center text-[#DF437E] font-bold text-xl md:text-2xl lg:text-3xl uppercase font-serif 
-      
-      }
+  li {
+    @apply font-semibold text-[18px] font-mono text-neutral-200;
+  }
+  .heading {
+    @apply text-center text-slate-200 font-bold text-xl md:text-2xl lg:text-3xl uppercase font-serif;
+  }
 
-      .text-input{
-            @apply p-4 rounded-md outline-none border-[1px]  border-rose-950 bg-slate-100
+  .text-input {
+    @apply p-4 rounded-md outline-none border-[1px]  border-rose-950 bg-slate-100;
+  }
+  .primary-button {
+    @apply px-4 py-2 rounded-full text-white  font-semibold font-mono bg-[#DF437E]  tracking-widest transition duration-200;
+  }
+  .primary-color {
+    @apply bg-[#ffddd2];
+  }
+  .blog {
+    @apply text-3xl font-bold underline underline-offset-4;
+  }
+  .image {
+    @apply rounded-lg  w-full border  md:w-[400px] h-[300px] shadow-2xl p-4  md:hover:scale-110 duration-300;
+  }
 
-      }
-      .primary-button{
-            @apply  px-4 py-2 rounded-full text-white  font-semibold font-mono bg-[#DF437E]  tracking-widest transition duration-200
-      }
-      .primary-color{
-            @apply bg-[#ffddd2]
-      }
-      .blog{
-            @apply text-3xl font-bold underline underline-offset-4
-      }
-      .image{
-            @apply rounded-lg  w-full border  md:w-[400px] h-[300px] shadow-2xl p-4  md:hover:scale-110 duration-300
-      }
+  .secondary-button {
+    @apply px-4  outline-none border-[2px] border-[#DF437E]   font-semibold text-neutral-500 font-mono   rounded-md py-0;
+  }
+  .new {
+    @apply text-yellow-700 uppercase font-semibold;
+  }
+  .service {
+    @apply shadow-xl font-mono p-2 md:p-6 bg-[#F7F1E5] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md;
+  }
 
-      .secondary-button{
-            @apply px-4  outline-none border-[2px] border-[#DF437E]   font-semibold text-neutral-500 font-mono   rounded-md py-0
-      }
-      .new{
-            @apply text-yellow-700 uppercase font-semibold
-      }
-      .service{
-            @apply shadow-xl font-mono p-2 md:p-6 bg-[#F7F1E5] hover:-translate-y-10 transition duration-200 space-y-6 rounded-md 
-      }
+ 
+ 
+}
+
+body {
+  @apply bg-[#1b3c4d];
 }

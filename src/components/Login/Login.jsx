@@ -85,13 +85,11 @@ const Login = () => {
       </div>
 
       <div className="md:flex my_container justify-between items-center">
-        <div className='max-w-[500px]'>
-          <img src={login} alt="" />
-        </div>
+        
 
         <div className=" mx-auto">
           <div className="hero-content flex-col ">
-            <div className=" border-2 rounded-md bg-[#1d1d1b] p-10  ">
+            <div className=" border-2 rounded-md p-10  ">
               <form onSubmit={handleLogin} className=" my_container">
                
                
@@ -122,20 +120,20 @@ const Login = () => {
                 </div>
                 <p className='text-yellow-600'>{error}</p>
                 <div className="form-control mt-6">
-                  <button className="btn btn-success bg-[#DF437E] tracking-widest mt-10 text-white">
+                  <button className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2">
                     Login now{" "}
-                    <AiOutlineLogin  className="ml-8 text-xl font-bold"></AiOutlineLogin>
+                    <AiOutlineLogin  className="ml-8 inline-block text-xl font-bold"></AiOutlineLogin>
                   </button>
                 </div>
                 <p className='text-neutral-200'>
                   Are you new?
                   <Link to="/register">
-                    <button className="btn btn-link inline-block text-[#DF437E]  ">Go to Register</button>
+                    <button className="btn btn-link inline-block text-gray-100 ">Go to Register</button>
                   </Link>
                 </p>
-                <div className="divider text-[#DF437E]">OR</div>
+                <div className="divider text-gray-100">OR</div>
                <div className="flex items-center justify-center">
-               <button onClick={handleGoogleSignIn} className="btn  btn-circle btn-outline"><FcGoogle className="text-xl"></FcGoogle></button>
+               <button onClick={handleGoogleSignIn} className="btn text-white btn-circle btn-outline"><FcGoogle className="text-xl text-white"></FcGoogle></button>
                </div>
               </form>
             </div>

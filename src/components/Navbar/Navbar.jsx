@@ -51,7 +51,7 @@ const Navbar = () => {
           </li>
           <li>
             {" "}
-            <NavLink onClick={handleLogOut} to="/login">
+            <NavLink className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700" onClick={handleLogOut} to="/login">
               Logout
             </NavLink>
           </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
         </>
       ) : (
         <li>
-          <NavLink className="font-serif" to="/login">
+          <NavLink className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700" to="/login">
             Login
           </NavLink>
         </li>
@@ -73,11 +73,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full h-[80px] sticky top-0 z-30 border-[1px] bg-[#F7F1E5]">
+    <div className="w-full h-[80px] sticky top-0 z-30 border-b-[1px] bg-[#1b475e]">
       <div className=" my_container flex justify-between items-center p-2 ">
         <div className="flex items-center font-serif">
-          <MdOutlineToys className="text-[#DF437E] text-[40px] "></MdOutlineToys>
-          <h1 className="text-[#DF437E] font-serif  font-bold uppercase md:text-4xl">
+        <img src="https://i.ibb.co/64gswsz/toylogo.png" alt="" />
+          <h1 className="text-slate-400 font-serif  font-bold  md:text-3xl">
             Toys Zone
           </h1>
         </div>
@@ -95,11 +95,11 @@ const Navbar = () => {
         <ul
           className={
             navOpen
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-[#F7F1E5] bg-[#F7F1E5] ease-in-out duration-500"
+              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-[#F7F1E5] bg-[#1b475e] ease-in-out duration-500"
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >
-          <h1 className="text-[#DF437E]  font-bold uppercase tracking-wider text-xl">
+          <h1 className="text-white  font-bold uppercase tracking-wider text-xl">
             Toys Zone
           </h1>
           {navItem}

@@ -52,46 +52,30 @@
 
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "./Banner.css";
-import img1 from "../../../public/banner.jpg";
-import img2 from "../../../public/baby1.jpg";
-import img3 from "../../../public/baby2.jpg";
-import img4 from "../../../public/baby3.jpg";
 
-import Marquee from "react-fast-marquee";
+
 
 const Banner = () => {
   return (
-    <div className="w-full banner bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-24">
+    <div className="w-full  p-4">
       <div className="my_container md:flex justify-between items-center space-y-6 md:space-y-0 p-8 md:p-40">
         <div className="w-full md:w-1/2 space-y-8">
-          <h1 className="text-2xl md:text-6xl font-serif font-bold">
+          <h1 className="text-2xl md:text-6xl font-serif font-bold text-slate-50">
             Welcome to Our Shop
           </h1>
-          <p className="text-lg leading-relaxed font-serif ">
+          <p className="text-lg leading-relaxed font-serif text-white ">
             Toys are objects designed for play and amusement, often intended for
             children. They come in various forms, such as action figures, dolls,
             board games, puzzles, building blocks, stuffed animals, vehicles,
             and electronics.
           </p>
-          <button className="bg-[#DF437E] hover:bg-blue-600 px-8 py-4 text-white font-semibold rounded-lg uppercase tracking-wider">
+          <button  className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">
             Get Started{" "}
             <AiOutlineShoppingCart className="ml-2 inline-block"></AiOutlineShoppingCart>{" "}
           </button>
         </div>
         <div className="w-full md:w-1/2 md:ml-8">
-          <Marquee
-            pauseOnHover
-            direction="right"
-            speed={30}
-            gradient={false}
-            className="rounded-2xl shadow-2xl"
-          >
-            <img src={img1} alt="" />
-            <img src={img2} alt="" />
-            <img src={img3} alt="" />
-            <img src={img4} alt="" />
-          </Marquee>
+          <img src="https://i.ibb.co/yszyV21/shine-mother-and-daughter-with-toys-1.png" alt="" />
         </div>
       </div>
     </div>

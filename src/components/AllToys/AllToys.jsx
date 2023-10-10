@@ -198,19 +198,19 @@ const AllToys = () => {
         {currentToys.map((toy, index) => (
           <div
             key={toy._id}
-            className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition duration-300"
+            className=" border text-white rounded-lg p-4 hover:shadow-xl transition duration-300"
           >
             <img
               src={toy.image}
               alt={toy.toyName}
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
-            <p className="text-lg font-bold text-gray-800">{toy.toyName}</p>
-            <p className="text-gray-600">{toy.Category}</p>
+            <p className="text-lg font-bold text-gray-300">{toy.toyName}</p>
+            <p className="text-gray-200">{toy.Category}</p>
             <p className="text-yellow-600 mt-2">${toy.price}</p>
             <div className="flex justify-between items-center mt-4">
               <Link to={`/viewDetails/${toy._id}`}>
-                <button className="border-[2px] px-4 py-2 rounded-lg border-[#DF437E] hover:bg-[#691133] hover:text-white transition duration-300">
+                <button className="border-[2px] px-4 py-2 rounded-lg border-white hover:bg-gray-500 hover:text-white transition duration-300">
                   Details{" "}
                   <BiStreetView className="inline-block text-yellow-700 ml-2" />
                 </button>

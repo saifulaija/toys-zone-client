@@ -22,7 +22,7 @@ const ShopCard = ({ toy }) => {
   };
 
   return (
-    <div className="shadow-lg rounded-lg overflow-hidden bg-white">
+    <div className=" rounded-lg overflow-hidden border">
       <div className="relative w-[300px] h-[200px] mx-auto overflow-hidden rounded-lg shadow-xl">
         <img
           className="w-full h-full object-cover transform transition-transform hover:scale-110"
@@ -33,10 +33,10 @@ const ShopCard = ({ toy }) => {
           New
         </span>
       </div>
-      <p className="font-bold text-center mt-4 text-lg">{toy.toyName}</p>
+      <p className="font-bold text-center text-gray-300 mt-4 text-lg">{toy.toyName}</p>
       <div className="flex justify-between items-center border-t-2 border-[#e15f5f] pt-4">
-        <p className="text-gray-500">Category: {toy?.Category}</p>
-        <p className="text-gray-500">Price: ${toy?.price}</p>
+        <p className="text-gray-200">Category: {toy?.Category}</p>
+        <p className="text-gray-200">Price: ${toy?.price}</p>
       </div>
       <div className="mt-4">
         <div className="flex justify-center items-center">
@@ -47,7 +47,7 @@ const ShopCard = ({ toy }) => {
           <Link to={`/homeDetails/${toy?._id}`}>
             <button
               onClick={handleTo}
-              className="px-4 py-1 text-white bg-[#DF437E] hover:bg-[#831941] focus:outline-none rounded-lg"
+              className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700"
             >
               View Details{" "}
               <FaLocationArrow className="inline-block ml-1" />

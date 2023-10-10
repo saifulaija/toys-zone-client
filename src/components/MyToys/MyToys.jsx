@@ -177,7 +177,7 @@ const MyToys = () => {
 
       <div className="text-end mb-6 me-4">
         <button
-          className="bg-[#DF437E] px-4 py-1 text-white rounded-lg"
+          className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2"
           onClick={() => setAsc(!asc)}
         >
           {asc ? "Price: High To Low" : "Price: Low To High"}
@@ -188,7 +188,7 @@ const MyToys = () => {
         {toys.map((toy, index) => (
           <div
             key={toy._id}
-            className="shadow-lg rounded-lg bg-white overflow-hidden"
+            className=" border rounded overflow-hidden"
           >
             <img
               className="w-full h-48 object-cover"
@@ -205,27 +205,27 @@ const MyToys = () => {
                 <AiFillStar className="text-yellow-500" />
                 <span className="ml-2 text-gray-600">({toy.rating})</span>
               </div>
-              <p className="flex items-center text-gray-600">
+              <p className="flex items-center text-gray-200">
                 <AiOutlineTag className="mr-2" /> {toy.Category}
               </p>
-              <p className="flex items-center text-gray-600">
+              <p className="flex items-center text-gray-200">
                 <AiOutlineTag className="mr-2" /> {toy.subCategory}
               </p>
-              <p className="flex items-center text-gray-600">
+              <p className="flex items-center text-gray-200">
                 <BsFillClockFill className="mr-2" /> {toy.quantity}
               </p>
-              <p className="flex items-center text-gray-600">
+              <p className="flex items-center text-gray-200">
                 <AiOutlineShoppingCart className="mr-2" /> ${toy.price}
               </p>
             </div>
             <div className="flex items-center justify-evenly">
               <Link to={`/update/${toy._id}`}>
-                <button className="text-white bg-[#DF437E] px-3 py-1 rounded-md hover:bg-[#992752] mr-2">
+                <button className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2">
                   <FiEdit className="inline-block mr-1" />
                   Edit
                 </button>
               </Link>
-              <button onClick={() => handleDelete(toy._id)} className="text-white bg-[#DF437E] px-3 py-1 rounded-md hover:bg-[#992752] mr-2">
+              <button onClick={() => handleDelete(toy._id)} className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2">
                 <FiTrash2 className="inline-block mr-2"  />
                 Delete
               </button>

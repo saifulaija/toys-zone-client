@@ -10,58 +10,50 @@ import useTitle from "../../hooks/useTitle";
 
 const auth = getAuth(app);
 
-
 const Register = () => {
+  const [error, setError] = useState("");
+  const { createUser, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [state, setState] = useState();
 
-      const [error, setError] = useState('');
-      const {createUser,logOut} = useContext(AuthContext);
-      const navigate = useNavigate();
-      const [state, setState] = useState()
+  useTitle("Register");
 
-      useTitle('Register')
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const displayName = form.name.value;
+    const photoURL = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-      const handleRegister = event =>{
-        
-            event.preventDefault();
-            const form = event.target;
-            const displayName = form.name.value;
-            const photoURL = form.photo.value;
-            const email = form.email.value;
-            const password = form.password.value;
-            
-            createUser(email, password)
-            .then(result=>{
-                const loggedUser = result.user;
-                logOut()
-                setError('');
-                form.reset();
-    
-                navigate('/login')
-                updateProfile(auth.currentUser, {
-                    displayName, photoURL 
-                  }).then(() => {
-                    toast.success('Create Account successful')
-                   
-                  }).catch((error) => {
-                   
-                  setError(error.message);
-                 
-                  });
-            })
-            .catch(error=>{
-              setError(error.message)
-            })
-            console.log(error);
-        }
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        logOut();
+        setError("");
+        form.reset();
 
-        
-        const handleHideShow = ()=>{
-          setState(prevState =>!prevState);
-         }
+        navigate("/login");
+        updateProfile(auth.currentUser, {
+          displayName,
+          photoURL,
+        })
+          .then(() => {
+            toast.success("Create Account successful");
+          })
+          .catch((error) => {
+            setError(error.message);
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+    console.log(error);
+  };
 
-    
-
-
+  const handleHideShow = () => {
+    setState((prevState) => !prevState);
+  };
 
   return (
     <>
@@ -70,14 +62,10 @@ const Register = () => {
       </div>
 
       <div className="md:flex justify-between items-center">
-        <div>
-          <img src={login} alt="" />
-        </div>
-
-        <div className="hero min-h-screen container mx-auto p-20">
+        <div className="hero min-h-screen container mx-auto p-8">
           <div className="hero-content flex-col ">
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form onSubmit={handleRegister} className="card-body">
+            <div className="card flex-shrink-0 w-full md:max-w-4xl border  ">
+              <form onSubmit={handleRegister} className="card-body w-full">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -119,31 +107,36 @@ const Register = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type= {state? 'text' : 'password'}
+                    type={state ? "text" : "password"}
                     placeholder="password"
                     name="password"
                     required
                     className="input input-bordered"
                   />
-                  <AiFillEyeInvisible onClick={handleHideShow} className="absolute ml-72 top-14"></AiFillEyeInvisible>
+                  <AiFillEyeInvisible
+                    onClick={handleHideShow}
+                    className="absolute ml-72 top-14"
+                  ></AiFillEyeInvisible>
                 </div>
-                <p className='text-yellow-800'>{error}</p>
+                <p className="text-yellow-800">{error}</p>
                 <div className="form-control mt-6">
-                  <button className="btn btn-success tracking-widest text-white">
+                  <button className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2">
                     Register now{" "}
-                    <AiOutlineLogin className="ml-8 text-xl font-bold"></AiOutlineLogin>
+                    <AiOutlineLogin className="ml-8 inline-block text-xl font-bold"></AiOutlineLogin>
                   </button>
                 </div>
-                <p>
+                <p className="text-gray-100">
                   Already have you account?
                   <Link to="/login">
-                    <button className="btn btn-link  ">Go to login</button>
+                    <button className="btn btn-link text-gray-300  ">Go to login</button>
                   </Link>
                 </p>
-                <div className="divider">OR</div>
-               <div className="flex items-center justify-center">
-               <button className="btn  btn-circle btn-outline"><FcGoogle className="text-xl"></FcGoogle></button>
-               </div>
+                <div className="divider text-gray-200">OR</div>
+                <div className="flex items-center justify-center">
+                  <button className="btn  btn-circle btn-outline">
+                    <FcGoogle className="text-xl text-white"></FcGoogle>
+                  </button>
+                </div>
               </form>
             </div>
           </div>

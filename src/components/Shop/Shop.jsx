@@ -37,7 +37,7 @@ const Shop = () => {
 
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full ">
       <div className="container mx-auto md:p-10 font-serif">
         <h1 className="heading">Shop by category</h1>
         <div className="m-8">
@@ -45,7 +45,7 @@ const Shop = () => {
             defaultIndex={tabIndex}
             onSelect={(index) => setTabIndex(index)}
           >
-            <TabList className=" border-[1px] font-serif text-sm border-[#DF437E]">
+            <TabList className=" border-[1px]  text-sm border-gray-300">
               <Tab>All Toys</Tab>
               <Tab>Category One</Tab>
               <Tab>Category Two</Tab>

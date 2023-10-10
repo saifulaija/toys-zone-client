@@ -56,7 +56,7 @@ const Update = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" bg-[#1d1d1b] rounded-xl flex w-full md:w-1/2 flex-col p-10 shadow-2xl space-y-4 mx-auto"
+        className=" border rounded-xl flex w-full md:w-1/2 flex-col p-10 shadow-2xl space-y-4 mx-auto"
       >
         <div className="flex flex-col">
           <label className="text-neutral-300 font-bold font-mono">Price</label>
@@ -92,7 +92,7 @@ const Update = () => {
           />
         </div>
         <input
-          className="submit-btn cursor-pointer bg-rose-500 px-4 tracking-widest uppercase font-bold text-white inline-block py-2 rounded-md"
+         className="text-white bg-gray-500 px-3 py-1 rounded-md hover:bg-gray-800 mr-2"
           value="Update Toy"
           type="submit"
         />{" "}
