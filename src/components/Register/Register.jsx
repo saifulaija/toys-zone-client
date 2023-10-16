@@ -62,7 +62,7 @@ const Register = () => {
       </div>
 
       <div className="md:flex justify-between items-center">
-        <div className="md:max-w-2xl min-h-screen md:container mx-auto p-2 md:p-8">
+        <div className="md:max-w-xl min-h-screen md:container mx-auto p-2 md:p-8">
           <div className=" flex-col ">
             <div className="card flex-shrink-0 w-full md:max-w-4xl border p-2  ">
               <form onSubmit={handleRegister} className=" md:w-full">
@@ -115,7 +115,7 @@ const Register = () => {
                   />
                   <AiFillEyeInvisible
                     onClick={handleHideShow}
-                    className="absolute ml-72 top-14"
+                    className="absolute ml-72 md:ml-[400px] top-14"
                   ></AiFillEyeInvisible>
                 </div>
                 <p className="text-yellow-800">{error}</p>
