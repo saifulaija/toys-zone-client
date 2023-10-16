@@ -79,7 +79,7 @@ const Login = () => {
       return (
           <>
           
-         <div className='w-full p-20'>
+         {/* <div className='md:p-20'>
          <div className="text-center">
         <h1 className=" heading mb-6 ">Login now!!</h1>
       </div>
@@ -141,7 +141,72 @@ const Login = () => {
         </div>
       </div>
           
-         </div>
+         </div> */}
+
+<div className='md:p-20'>
+  <div className="text-center">
+    <h1 className="heading text-2xl md:text-4xl mb-6">Login now!!</h1>
+  </div>
+
+  <div className="md:flex md:my_container justify-between items-center">
+    <div className="mx-auto">
+      <div className=" p-4 flex-col">
+        <div className="border-2 rounded-md p-4 md:p-10">
+          <form onSubmit={handleLogin} className="md:my_container">
+            <div className="form-control w-full md:w-[400px]">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                required
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control relative">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type={state ? 'text' : 'password'}
+                placeholder="Password"
+                name="password"
+                required
+                className="input input-bordered"
+              />
+              <AiFillEyeInvisible
+                onClick={handleHideShow}
+                className="absolute right-4 top-2/3 transform -translate-y-1/2 text-xl text-gray-500 cursor-pointer"
+              />
+            </div>
+            <p className='text-yellow-600'>{error}</p>
+            <div className="form-control mt-4 md:mt-6">
+              <button className="text-white bg-gray-500 px-3 py-2 rounded-md hover:bg-gray-800">
+                Login now{" "}
+                <AiOutlineLogin className="ml-2 inline-block text-xl font-bold" />
+              </button>
+            </div>
+            <p className='text-neutral-200'>
+              Are you new?
+              <Link to="/register">
+                <button className="btn btn-link inline-block text-gray-100">Go to Register</button>
+              </Link>
+            </p>
+            <div className="divider text-gray-100 my-4 md:my-6">OR</div>
+            <div className="flex items-center justify-center">
+              <button onClick={handleGoogleSignIn} className="btn text-white btn-circle btn-outline">
+                <FcGoogle className="text-xl text-white" />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
           </>
       );
 };

@@ -62,10 +62,10 @@ const Register = () => {
       </div>
 
       <div className="md:flex justify-between items-center">
-        <div className="hero min-h-screen container mx-auto p-8">
-          <div className="hero-content flex-col ">
-            <div className="card flex-shrink-0 w-full md:max-w-4xl border  ">
-              <form onSubmit={handleRegister} className="card-body w-full">
+        <div className="md:max-w-2xl min-h-screen md:container mx-auto p-2 md:p-8">
+          <div className=" flex-col ">
+            <div className="card flex-shrink-0 w-full md:max-w-4xl border p-2  ">
+              <form onSubmit={handleRegister} className=" md:w-full">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
